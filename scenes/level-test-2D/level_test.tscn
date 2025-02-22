@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctj6787jiv8ni"]
+
+[ext_resource type="PackedScene" uid="uid://dgpba0c0ris03" path="res://scenes/level-test-2D/player.tscn" id="1_xo5mk"]
+[ext_resource type="PackedScene" uid="uid://my6spos70dim" path="res://scenes/level-test-2D/platform.tscn" id="2_qm57m"]
+[ext_resource type="PackedScene" uid="uid://dmr3hc0alhoj" path="res://scenes/level-test-2D/basic_enemy.tscn" id="3_42qvf"]
+
+[node name="Node" type="Node"]
+
+[node name="Player" parent="." instance=ExtResource("1_xo5mk")]
+position = Vector2(210, 515)
+
+[node name="Platform2D2" parent="." instance=ExtResource("2_qm57m")]
+position = Vector2(212, 596)
+
+[node name="Platform2D" parent="." instance=ExtResource("2_qm57m")]
+position = Vector2(644, 532)
+
+[node name="BasicEnemy" parent="." instance=ExtResource("3_42qvf")]
+position = Vector2(655, 512)
