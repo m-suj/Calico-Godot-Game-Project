@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b4r7qg1lfhdmv"]
 
-[ext_resource type="Script" path="res://scenes/player.gd" id="1_n511c"]
+[ext_resource type="Script" path="res://scripts/main-hub-3D/player.gd" id="1_w1vgi"]
 [ext_resource type="Texture2D" uid="uid://c0jhid0m3kngm" path="res://assets/test_char.png" id="2_sbxoe"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_o3ejt"]
@@ -8,7 +8,7 @@ height = 0.8
 radius = 0.4
 
 [node name="Character" type="CharacterBody3D"]
-script = ExtResource("1_n511c")
+script = ExtResource("1_w1vgi")
 
 [node name="Collision Shape" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)

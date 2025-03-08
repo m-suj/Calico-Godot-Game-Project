@@ -1,7 +1,7 @@
 extends Node3D
 
 
-@onready var player: Player = get_tree().root.get_node('Node/Player')
+@onready var player = get_tree().root.get_node('Node/Player')
 @onready var label: Label3D = $Label3D
 
 
@@ -30,7 +30,7 @@ func _process(delta):
 		label.text = base_text + active_areas[0].action_name
 		label.global_position = active_areas[0].global_position
 		label.show()
-	else:
+	elif label.is_visible_in_tree():
 		print('hiding label')
 		label.hide()
 

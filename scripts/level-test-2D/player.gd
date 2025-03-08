@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-const BOUNCE_VELOCITY = -300.0
-
+const SPEED = 70.0
+const JUMP_VELOCITY = -350.0
+const BOUNCE_VELOCITY = -200.0
+const GRAVITY = Vector2(0, 980)
 
 @onready var bounce_raycasts: Node2D = $BounceRaycasts
 
@@ -12,19 +12,23 @@ const BOUNCE_VELOCITY = -300.0
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += GRAVITY * delta
+		if not Input.is_action_pressed("jump") and velocity.y < 0:
+			velocity += GRAVITY * 3/4 * delta
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		# Apply acceleration
+		velocity.x += direction * SPEED
+	
+	# Apply friction/resistance/whatever
+	velocity.x *= 0.8
+	velocity.y *= 0.99
 	
 	_check_bounce(delta)
 	move_and_slide()

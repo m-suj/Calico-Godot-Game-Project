@@ -31,5 +31,4 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_ceiling():
 		velocity.y *= -1
-		print('bounced off')
 		print(velocity.y)
