@@ -17,4 +17,5 @@ Stan projektu na dzisiaj:
  - Rozmiar postaci zbliżony do formatu 16x32 piksele, hitbox nieco zwęższony (12x32 piksele)
  - Utworzony został początek poziomu tutorialowego, zawierający dwie pierwsze sekcje platformowe
  - Istnieje stacjonarny (na razie ukryty) przeciwnik, od którego można się odbić, skacząc mu na głowę
+
 Ewentualne kwestie dotyczące szczegółowości raportu (głównie dane techniczne - rozmiary pikseli, dokładna charakterystyka ruchu postaci i SI przeciwników, dokładny plan mapy) zostawię do uzgodnienia - na tym etapie nie sądzę, by to było jeszcze aż tak koniecznie, ale jestem otwarty na propozycje dot. komunikacji i współpracy nad projektem żeby nic się nie rozjechało
