@@ -2,11 +2,11 @@
 gierka
 Silnik: Godot Engine v4.3
 
-9 grudnia 2024r.:
+## 9 grudnia 2024r.:
 Projekt jest w bardzo wczesnej fazie - dopiero co powstał. Wrzucony został initial commit do etapu 1. obecnego taska, projekt spełnia naprawdę podstawowe założenia tego etapu - jest to praktycznie szkielet, na którym wraz z feedbackami i kolejnymi pracami nad nim będzie dostosowywany i będzie nabierał kształtu.
 Jedyna placeholderowa tekstura to tekstura postaci w res://assets - druga jest obecnie nieużywana.
 
-10 marca 2025r.:
+## 10 marca 2025r.:
 Nastąpiło kilka updateów projektu, oto ich krótkie podsumowanie, a poniżej nieco bardziej szczegółowa dokumentacja obecnego stanu projektu:
  - dodano podstawę systemu interakcji - po wejściu do strefy interakcji i naciśnięciu dedykowanego przycisku, gra wykonuje odpowiednie działania - w jednym z przypadków jest to przeniesienie gracza do poziomu 2D - nowej sceny
  - rozpoczęto pracę nad przykładowym poziomem (level_test_2D), dodano defaultowy movement postaci (potem nieco usprawniony, by był nieco lepszy do kontrolowania), oraz dodano odbijanie się od głowy przeciwnika
