@@ -1,12 +1,13 @@
 extends CharacterBody2D
 
 
-const SPEED = 70.0
+const SPEED = 60.0
 const JUMP_VELOCITY = -350.0
 const BOUNCE_VELOCITY = -200.0
 const GRAVITY = Vector2(0, 980)
 
 @onready var bounce_raycasts: Node2D = $BounceRaycasts
+@onready var sprite_player: AnimatedSprite2D = $AnimatedSprite2D
 
 
 func _physics_process(delta: float) -> void:
@@ -22,16 +23,21 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("move_left", "move_right")
-	if direction:
+	if direction == 0:
+		sprite_player.play("idle")
+	else:
+		sprite_player.play("running")
+		sprite_player.flip_h = direction < 0
 		# Apply acceleration
 		velocity.x += direction * SPEED
 	
 	# Apply friction/resistance/whatever
-	velocity.x *= 0.8
+	velocity.x *= 0.75
 	velocity.y *= 0.99
 	
 	_check_bounce(delta)
 	move_and_slide()
+	apply_floor_snap()
 	
 
 

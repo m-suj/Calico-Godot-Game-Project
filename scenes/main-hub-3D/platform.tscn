@@ -39,4 +39,5 @@ mesh = SubResource("CylinderMesh_u83kc")
 shape = SubResource("CylinderShape3D_0efo2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="InteractionArea"]
+visible = false
 mesh = SubResource("CylinderMesh_jl735")
