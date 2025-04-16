@@ -19,3 +19,12 @@ Stan projektu na dzisiaj:
  - Istnieje stacjonarny (na razie ukryty) przeciwnik, od którego można się odbić, skacząc mu na głowę
 
 Ewentualne kwestie dotyczące szczegółowości raportu (głównie dane techniczne - rozmiary pikseli, dokładna charakterystyka ruchu postaci i SI przeciwników, dokładny plan mapy) zostawię do uzgodnienia - na tym etapie nie sądzę, by to było jeszcze aż tak koniecznie, ale jestem otwarty na propozycje dot. komunikacji i współpracy nad projektem żeby nic się nie rozjechało
+
+## 16 kwietnia 2025r.:
+Obecnie ukończono podstawowy system checkpointów i respawnu postaci w levelu platformowym. Zrezygnowano z początkowych planów hub'u 3D, zamiast tego utworzona zostanie sekcja Visual Novel z wprowadzeniem fabularnym (do zrobienia w przyszłości).
+System checkpointów jest dość ubogi, a gracz póki co umiera tylko od upadku w przepaść (tymczasowo oznaczoną prowizorycznymi płomieniami), ale cały system zdaje się funkcjonować sprawnie (nie był bardzo mocno testowany, ale nie jest też rozbudowany, sam szkielet wywołań przebiega sprawnie).
+Oczekiwany feedback, póki co do zrobienia jest jeszcze:
+  - menu główne, z możliwością wczytania zapisanej gry
+  - co za tym idzie: system zapisu stanu gry (który na razie zapisze stan obecnego poziomu)
+  - UI: menu w grze
+Na razie planuję skupić się na stworzeniu menu głównego (które będzie nas witało po uruchomieniu gry), z którego będzie można wczytać nową grę lub kontynuować zapisaną (na razie tylko na podstawie level_test_2D).
