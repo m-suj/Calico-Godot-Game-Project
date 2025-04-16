@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player2D
 
 
 const SPEED = 60.0
@@ -54,3 +55,10 @@ func _check_bounce(delta):
 
 func bounce(bounce_velocity = BOUNCE_VELOCITY):
 	velocity.y = bounce_velocity
+
+
+func on_fell():
+	$AnimatedSprite2D.rotate(deg_to_rad(-90))
+
+func on_respawn():
+	$AnimatedSprite2D.rotate(deg_to_rad(90))

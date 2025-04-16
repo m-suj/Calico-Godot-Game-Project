@@ -34,6 +34,7 @@ shape = SubResource("CylinderShape3D_hwyox")
 mesh = SubResource("CylinderMesh_u83kc")
 
 [node name="InteractionArea" parent="." instance=ExtResource("1_nby4e")]
+action_name = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
 shape = SubResource("CylinderShape3D_0efo2")

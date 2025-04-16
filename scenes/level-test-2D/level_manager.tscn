@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://c81gt1v08lrq6"]
+
+[ext_resource type="Script" path="res://scripts/level-test-2D/level_manager.gd" id="1_sy40l"]
+
+[node name="Level Manager" type="Node"]
+script = ExtResource("1_sy40l")
+
+[node name="Level Restart Timer" type="Timer" parent="."]
+wait_time = 0.6
+one_shot = true
+
+[connection signal="timeout" from="Level Restart Timer" to="." method="_on_level_restart"]

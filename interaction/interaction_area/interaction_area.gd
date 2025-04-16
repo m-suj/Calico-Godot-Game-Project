@@ -10,10 +10,10 @@ var interact: Callable = func():
 
 
 func _on_body_entered(body: Node3D) -> void:
-	if body is Player:
+	if body is Player3D:
 		InteractionManager.register_area(self)
 
 
 func _on_body_exited(body: Node3D) -> void:
-	if body is Player:
+	if body is Player3D:
 		InteractionManager.unregister_area(self)

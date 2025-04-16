@@ -1,5 +1,5 @@
 extends CharacterBody3D
-class_name Player
+class_name Player3D
 
 
 const SPEED = 5.0
