@@ -7,6 +7,8 @@ const JUMP_VELOCITY = -350.0
 const BOUNCE_VELOCITY = -200.0
 const GRAVITY = Vector2(0, 980)
 
+var jump_buffer: bool = false
+
 @onready var bounce_raycasts: Node2D = $BounceRaycasts
 @onready var sprite_player: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -16,11 +18,22 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += GRAVITY * delta
 		if not Input.is_action_pressed("jump") and velocity.y < 0:
-			velocity += GRAVITY * 3/4 * delta
+			velocity += GRAVITY * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump"):
+		if is_on_floor():
+			velocity.y = JUMP_VELOCITY
+		else:
+			jump_buffer = true
+	
+	if Input.is_action_just_released("jump"):
+		jump_buffer = false
+	
+	if is_on_floor() and jump_buffer:
 		velocity.y = JUMP_VELOCITY
+		jump_buffer = false
+		
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("move_left", "move_right")

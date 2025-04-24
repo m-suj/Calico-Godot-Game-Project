@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5uae0fh8vhy7"]
+
+[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_yw527"]
+[ext_resource type="Texture2D" uid="uid://d4ma2ij2m262b" path="res://assets/main_menu_bg.png" id="2_jppsw"]
+
+[sub_resource type="Theme" id="Theme_hjwso"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yw527")
+
+[node name="MainMenuBg" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("2_jppsw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -132.0
+offset_right = 128.0
+offset_bottom = 132.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="NewGameButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_hjwso")
+theme_override_font_sizes/font_size = 32
+text = "New Game"
+
+[connection signal="pressed" from="VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]

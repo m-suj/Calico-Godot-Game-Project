@@ -88,11 +88,11 @@ visible = false
 
 [node name="Player" parent="." instance=ExtResource("1_xo5mk")]
 z_index = 2
-position = Vector2(696, 432)
+position = Vector2(696, 448)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2(0, -32)
 zoom = Vector2(2.25, 2.25)
-position_smoothing_speed = 3.0
+limit_bottom = 672
 
 [connection signal="transition_finished" from="Level Manager/Transition Screen" to="Level Manager" method="_on_transition_finished"]
