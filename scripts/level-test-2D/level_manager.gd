@@ -1,8 +1,8 @@
 extends Node
 
 
-@onready var level_restart: Timer = $"Level Restart Timer"
-@onready var transition_screen: TransitionScreen = $"Transition Screen"
+@onready var level_restart: Timer = $"LevelRestartTimer"
+@onready var transition_screen: TransitionScreen = $"TransitionScreen"
 @onready var player: Player2D = $"../Player"
 var current_checkpoint = null
 

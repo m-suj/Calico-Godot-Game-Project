@@ -5,8 +5,8 @@
 [node name="Level Manager" type="Node"]
 script = ExtResource("1_sy40l")
 
-[node name="Level Restart Timer" type="Timer" parent="."]
+[node name="LevelRestartTimer" type="Timer" parent="."]
 wait_time = 0.6
 one_shot = true
 
-[connection signal="timeout" from="Level Restart Timer" to="." method="_on_level_restart"]
+[connection signal="timeout" from="LevelRestartTimer" to="." method="_on_level_restart"]
