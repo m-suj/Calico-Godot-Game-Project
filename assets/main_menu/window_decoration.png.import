@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5naf6ortbsim"
-path="res://.godot/imported/checkpoint_flag.png-de4f98a6bba49c245f748d2869fecad9.ctex"
+uid="uid://btqvsgutx3hbr"
+path="res://.godot/imported/window_decoration.png-b11da4e09f37eadf26b0888a225c4e57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/checkpoint_flag.png"
-dest_files=["res://.godot/imported/checkpoint_flag.png-de4f98a6bba49c245f748d2869fecad9.ctex"]
+source_file="res://assets/main_menu/window_decoration.png"
+dest_files=["res://.godot/imported/window_decoration.png-b11da4e09f37eadf26b0888a225c4e57.ctex"]
 
 [params]
 

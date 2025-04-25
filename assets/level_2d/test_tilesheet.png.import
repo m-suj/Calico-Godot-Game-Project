@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2qhi1js0hor3"
-path.s3tc="res://.godot/imported/test_platform.png-43f303437067302f6ca7c9f10a63383c.s3tc.ctex"
+uid="uid://u8u52g1wenpi"
+path="res://.godot/imported/test_tilesheet.png-f8f2da6649869574168289d88dfc87f7.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/test_platform.png"
-dest_files=["res://.godot/imported/test_platform.png-43f303437067302f6ca7c9f10a63383c.s3tc.ctex"]
+source_file="res://assets/level_2d/test_tilesheet.png"
+dest_files=["res://.godot/imported/test_tilesheet.png-f8f2da6649869574168289d88dfc87f7.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

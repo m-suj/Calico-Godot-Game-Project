@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bfu3mdjmvwu1m" path="res://scenes/level-test-2D/parallax_background.tscn" id="3_c0arm"]
 [ext_resource type="TileSet" uid="uid://4y1e3wocp36i" path="res://scenes/level-test-2D/level_test.tres" id="3_kohj3"]
 [ext_resource type="PackedScene" uid="uid://dlyygo4x2tvr3" path="res://scenes/level-test-2D/killzone.tscn" id="4_em54t"]
-[ext_resource type="Texture2D" uid="uid://r631m0va27gs" path="res://assets/flames_test.png" id="5_4d1nj"]
+[ext_resource type="Texture2D" uid="uid://r631m0va27gs" path="res://assets/level_2d/flames_test.png" id="5_4d1nj"]
 [ext_resource type="PackedScene" uid="uid://c81gt1v08lrq6" path="res://scenes/level-test-2D/level_manager.tscn" id="6_fhxom"]
 [ext_resource type="PackedScene" uid="uid://di3xy0ormero1" path="res://scenes/level-test-2D/checkpoint.tscn" id="7_35qwj"]
 [ext_resource type="PackedScene" uid="uid://boonyp0f2b7qx" path="res://scenes/level-test-2D/transition_screen.tscn" id="8_ex53e"]

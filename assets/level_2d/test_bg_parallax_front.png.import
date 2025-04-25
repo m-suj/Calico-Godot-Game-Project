@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r631m0va27gs"
-path="res://.godot/imported/flames_test.png-dd48125cda7cc631b9c64715ede40ac5.ctex"
+uid="uid://bbbqyt6aj6nfg"
+path="res://.godot/imported/test_bg_parallax_front.png-f0500b9fb02b283803efa3a74cfd872c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/flames_test.png"
-dest_files=["res://.godot/imported/flames_test.png-dd48125cda7cc631b9c64715ede40ac5.ctex"]
+source_file="res://assets/level_2d/test_bg_parallax_front.png"
+dest_files=["res://.godot/imported/test_bg_parallax_front.png-f0500b9fb02b283803efa3a74cfd872c.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4bc76dil046g"
-path="res://.godot/imported/test_bg_parallax_back.png-873db0f0bf7417b2aaccb2dc575b735d.ctex"
+uid="uid://c5naf6ortbsim"
+path="res://.godot/imported/checkpoint_flag.png-a72366bff593f76bea9e66275d63943f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/test_bg_parallax_back.png"
-dest_files=["res://.godot/imported/test_bg_parallax_back.png-873db0f0bf7417b2aaccb2dc575b735d.ctex"]
+source_file="res://assets/level_2d/checkpoint_flag.png"
+dest_files=["res://.godot/imported/checkpoint_flag.png-a72366bff593f76bea9e66275d63943f.ctex"]
 
 [params]
 
