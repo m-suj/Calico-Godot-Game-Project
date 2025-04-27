@@ -1,14 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://bfu3mdjmvwu1m"]
 
-[ext_resource type="Texture2D" uid="uid://d4bc76dil046g" path="res://assets/test_bg_parallax_back.png" id="1_4yp3y"]
-[ext_resource type="Texture2D" uid="uid://cetoqr0r53kce" path="res://assets/test_bg_parallax_mid.png" id="2_m72ij"]
-[ext_resource type="Texture2D" uid="uid://bbbqyt6aj6nfg" path="res://assets/test_bg_parallax_front.png" id="3_6avky"]
+[ext_resource type="Texture2D" uid="uid://d4bc76dil046g" path="res://assets/level_2d/test_bg_parallax_back.png" id="1_4yp3y"]
+[ext_resource type="Texture2D" uid="uid://cetoqr0r53kce" path="res://assets/level_2d/test_bg_parallax_mid.png" id="2_m72ij"]
+[ext_resource type="Texture2D" uid="uid://bbbqyt6aj6nfg" path="res://assets/level_2d/test_bg_parallax_front.png" id="3_6avky"]
 
 [node name="Parallax Background" type="Node2D"]
 texture_filter = 1
 
 [node name="Back" type="Parallax2D" parent="."]
-repeat_size = Vector2(536, 0)
+repeat_size = Vector2(536, 352)
+autoscroll = Vector2(5, 0)
 repeat_times = 3
 
 [node name="Sky" type="Sprite2D" parent="Back"]
