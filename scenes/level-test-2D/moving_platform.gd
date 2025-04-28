@@ -7,4 +7,5 @@ extends AnimatableBody2D
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player2D:
+		print("animation starts playing")
 		animation_player.play("move3_vertical")
