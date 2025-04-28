@@ -28,3 +28,12 @@ Oczekiwany feedback, póki co do zrobienia jest jeszcze:
   - co za tym idzie: system zapisu stanu gry (który na razie zapisze stan obecnego poziomu)
   - UI: menu w grze
 Na razie planuję skupić się na stworzeniu menu głównego (które będzie nas witało po uruchomieniu gry), z którego będzie można wczytać nową grę lub kontynuować zapisaną (na razie tylko na podstawie level_test_2D).
+
+## 28 kwietnia 2025r.:
+Nastąpił dość spory progress, na tym etapie rozwijane (i, przynajmniej bazowo, po części gotowe) elementy projektu to:
+  - menu główne - zrobiona została znaczna część graficznego interfejsu (bez efektów/animacji, przynajmniej na razie), a jedyną dostępną funkcją na razie jest rozpoczęcie nowej gry. Powoduje to przełączenie sceny na (na razie) poziom platformowy 2D
+  - sam poziom platformowy - przygotowane zostały tilesheety do platform/obiektów platformowych, oraz grafiki levela - umożliwiło to rozpoczęcie zastępowania placeholderów tymi właśnie docelowymi materiałami. Nadal brakuje pewnych wartych dodania elementów, takich jak trawa przy wystających blokach oraz sposobu zamaskowania przepaści, ale całość wygląda już w miarę ciekawie. 
+Podobnie jak z menu głównym, potencjalne efekty mogą być dodane raczej na późniejszym etapie rozwoju - póki co, główne skupienie będzie teraz na funkcjonalnych częściach projektu:
+  - zapisywanie i wczytywanie stanu (na razie) poziomu (docelowo całej gry, włącznie z segmentami dialogowymi)
+  - dopracowanie funkcjonalności menu głównego - dodanie paska na dole z datą+godziną i przyciskiem wyjścia z gry
+  - in-game menu
