@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bj88pokwm4oib"]
 
-[ext_resource type="Texture2D" uid="uid://clt5safxxarh1" path="res://assets/level_2d/env/platform_tilesheet.png" id="1_1c2po"]
+[ext_resource type="Texture2D" uid="uid://bl0731vowpgb7" path="res://assets/level_2d/env/platform_tilesheet.png" id="1_1c2po"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uerrf"]
 texture = ExtResource("1_1c2po")
@@ -29,7 +29,6 @@ texture = ExtResource("1_1c2po")
 2:4/0 = 0
 2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:4/0 = 0
-3:4/0/z_index = 2
 3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 3, -8, 3, 8, -8, 8)
 1:5/0 = 0
 1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)

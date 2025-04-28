@@ -9,6 +9,8 @@ const GRAVITY = Vector2(0, 980)
 
 var jump_buffer: bool = false
 
+var is_alive = true
+
 @onready var bounce_raycasts: Node2D = $BounceRaycasts
 @onready var sprite_player: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -71,7 +73,11 @@ func bounce(bounce_velocity = BOUNCE_VELOCITY):
 
 
 func on_fell():
+	is_alive = false
+	print('I fell')
 	$AnimatedSprite2D.rotate(deg_to_rad(-90))
 
 func on_respawn():
+	is_alive = true
+	print('I respawned')
 	$AnimatedSprite2D.rotate(deg_to_rad(90))
