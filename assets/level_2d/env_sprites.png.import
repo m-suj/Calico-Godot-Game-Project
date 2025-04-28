@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r631m0va27gs"
-path="res://.godot/imported/flames_test.png-ea7b61cdc4e1ccb2115f77ca08a31ea2.ctex"
+uid="uid://buptoq4kv8ebk"
+path="res://.godot/imported/env_sprites.png-cfc3dc04d39d6e1928567ff6d9214a6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/level_2d/flames_test.png"
-dest_files=["res://.godot/imported/flames_test.png-ea7b61cdc4e1ccb2115f77ca08a31ea2.ctex"]
+source_file="res://assets/level_2d/env_sprites.png"
+dest_files=["res://.godot/imported/env_sprites.png-cfc3dc04d39d6e1928567ff6d9214a6b.ctex"]
 
 [params]
 

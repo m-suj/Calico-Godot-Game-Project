@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vhmdud6k06lt"
-path="res://.godot/imported/placeholder.png-f67c41373098db4be55579bb0cf2efe2.ctex"
+uid="uid://c3ov0cud8aalr"
+path="res://.godot/imported/platform_place_field(TODO).png-75b6410b28eb9e54b9d612f383136750.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/level_2d/placeholder.png"
-dest_files=["res://.godot/imported/placeholder.png-f67c41373098db4be55579bb0cf2efe2.ctex"]
+source_file="res://assets/level_2d/platform_place_field(TODO).png"
+dest_files=["res://.godot/imported/platform_place_field(TODO).png-75b6410b28eb9e54b9d612f383136750.ctex"]
 
 [params]
 

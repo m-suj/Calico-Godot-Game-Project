@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtyngi84g7jj4"
-path="res://.godot/imported/moving_platform.png-82391005720f2ee1f229a8a7953fca61.ctex"
+uid="uid://cpwgvkjjeccxo"
+path="res://.godot/imported/player_running_spreadsheet.png-e7886f451f6a80677c7adf2d84bda516.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/level_2d/moving_platform.png"
-dest_files=["res://.godot/imported/moving_platform.png-82391005720f2ee1f229a8a7953fca61.ctex"]
+source_file="res://assets/level_2d/player_running_spreadsheet.png"
+dest_files=["res://.godot/imported/player_running_spreadsheet.png-e7886f451f6a80677c7adf2d84bda516.ctex"]
 
 [params]
 
