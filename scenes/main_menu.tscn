@@ -14,8 +14,7 @@
 
 [sub_resource type="Theme" id="Theme_hjwso"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g2id7"]
-texture = ExtResource("4_nnjh0")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y8vjc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r3obp"]
 texture = ExtResource("2_7h1dt")
@@ -111,10 +110,12 @@ alignment = 1
 custom_minimum_size = Vector2(0, 46)
 layout_mode = 2
 theme = SubResource("Theme_hjwso")
+theme_override_colors/font_hover_color = Color(0.45098, 0.45098, 0.45098, 1)
+theme_override_colors/font_pressed_color = Color(0.65098, 0.65098, 0.65098, 1)
 theme_override_colors/font_focus_color = Color(0.317647, 0.317647, 0.317647, 1)
 theme_override_colors/font_color = Color(0.317647, 0.317647, 0.317647, 1)
 theme_override_font_sizes/font_size = 21
-theme_override_styles/focus = SubResource("StyleBoxTexture_g2id7")
+theme_override_styles/focus = SubResource("StyleBoxTexture_y8vjc")
 theme_override_styles/hover = SubResource("StyleBoxTexture_r3obp")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_tdn40")
 theme_override_styles/normal = SubResource("StyleBoxTexture_l1kx7")
@@ -124,8 +125,12 @@ text = "NOWA GRA"
 custom_minimum_size = Vector2(0, 46)
 layout_mode = 2
 theme = SubResource("Theme_hjwso")
+theme_override_colors/font_hover_color = Color(0.45098, 0.45098, 0.45098, 1)
+theme_override_colors/font_pressed_color = Color(0.65098, 0.65098, 0.65098, 1)
+theme_override_colors/font_focus_color = Color(0.317647, 0.317647, 0.317647, 1)
 theme_override_colors/font_color = Color(0.317647, 0.317647, 0.317647, 1)
 theme_override_font_sizes/font_size = 21
+theme_override_styles/focus = SubResource("StyleBoxTexture_y8vjc")
 theme_override_styles/hover = SubResource("StyleBoxTexture_r3obp")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_tdn40")
 theme_override_styles/normal = SubResource("StyleBoxTexture_l1kx7")
@@ -135,9 +140,12 @@ text = "NOWA GRA"
 custom_minimum_size = Vector2(0, 46)
 layout_mode = 2
 theme = SubResource("Theme_hjwso")
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0.25098, 0.25098, 0.25098, 1)
+theme_override_colors/font_hover_color = Color(0.45098, 0.45098, 0.45098, 1)
+theme_override_colors/font_pressed_color = Color(0.65098, 0.65098, 0.65098, 1)
+theme_override_colors/font_focus_color = Color(0.317647, 0.317647, 0.317647, 1)
+theme_override_colors/font_color = Color(0.317647, 0.317647, 0.317647, 1)
 theme_override_font_sizes/font_size = 21
+theme_override_styles/focus = SubResource("StyleBoxTexture_y8vjc")
 theme_override_styles/hover = SubResource("StyleBoxTexture_r3obp")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_tdn40")
 theme_override_styles/normal = SubResource("StyleBoxTexture_l1kx7")
