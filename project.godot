@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="Amongomia"
-run/main_scene="res://scenes/main_menu.tscn"
+run/main_scene="res://scenes/main_menu/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 InteractionManager="*res://interaction/interaction_manager.tscn"
-GameManager="*res://scenes/game_manager.gd"
+GameManager="*res://scripts/game_manager.gd"
 
 [display]
 
