@@ -1,11 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://b5uae0fh8vhy7"]
+[gd_scene load_steps=17 format=3 uid="uid://b5uae0fh8vhy7"]
 
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_yw527"]
 [ext_resource type="Texture2D" uid="uid://c6y13mm83tutx" path="res://assets/main_menu/button_hover.png" id="2_7h1dt"]
+[ext_resource type="Texture2D" uid="uid://bobdxvfcw5i7o" path="res://assets/main_menu/power_button_normal.png" id="2_bsv5t"]
 [ext_resource type="Texture2D" uid="uid://csosdmgd2rmdk" path="res://assets/main_menu/button_pressed.png" id="3_joygw"]
+[ext_resource type="Texture2D" uid="uid://btaxfn5q7ys" path="res://assets/main_menu/power_button_pressed.png" id="3_pae2a"]
 [ext_resource type="Texture2D" uid="uid://dn05tkkcq6ra4" path="res://assets/main_menu/window_options.png" id="3_v1l8f"]
 [ext_resource type="Texture2D" uid="uid://bsy1lfcq3bs0a" path="res://assets/main_menu/button_normal.png" id="4_nnjh0"]
+[ext_resource type="Texture2D" uid="uid://cf6c62h8nmdon" path="res://assets/main_menu/power_button_hover.png" id="4_qkga3"]
 [ext_resource type="Texture2D" uid="uid://btqvsgutx3hbr" path="res://assets/main_menu/window_decoration.png" id="5_3mj1f"]
+[ext_resource type="Script" path="res://scripts/main_menu/date_time_label.gd" id="5_yd7pq"]
 [ext_resource type="Texture2D" uid="uid://qf6tup3ivmf8" path="res://assets/main_menu/synthia.png" id="7_d4x4u"]
 
 [sub_resource type="Theme" id="Theme_hjwso"]
@@ -43,6 +47,35 @@ layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.439216, 0.439216, 0.439216, 1)
+
+[node name="NavBar" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 592.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.286275, 0.286275, 0.286275, 1)
+
+[node name="TextureButton" type="TextureButton" parent="NavBar"]
+layout_mode = 0
+offset_right = 56.0
+offset_bottom = 56.0
+texture_normal = ExtResource("2_bsv5t")
+texture_pressed = ExtResource("3_pae2a")
+texture_hover = ExtResource("4_qkga3")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="NavBar"]
+layout_mode = 0
+offset_left = 1024.0
+offset_right = 1136.0
+offset_bottom = 55.0
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("5_yd7pq")
+
+[node name="Timer" type="Timer" parent="NavBar/Label"]
+wait_time = 5.0
+autostart = true
 
 [node name="WindowsSprites" type="Node2D" parent="."]
 
@@ -137,6 +170,8 @@ text = "DEMO"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="pressed" from="NavBar/TextureButton" to="." method="_on_power_button_pressed"]
+[connection signal="timeout" from="NavBar/Label/Timer" to="NavBar/Label" method="_on_timer_timeout"]
 [connection signal="pressed" from="WindowsSprites/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="WindowsSprites/VBoxContainer/NewGameButton2" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="WindowsSprites/VBoxContainer/NewGameButton3" to="." method="_on_new_game_button_pressed"]

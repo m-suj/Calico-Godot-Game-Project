@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlq2ps52i5nl6"]
+
+[ext_resource type="Texture2D" path="res://assets/level_2d/env/moving_platform.png" id="1_wkayy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8q1gr"]
+size = Vector2(46, 7)
+
+[node name="MovingPlatform" type="AnimatableBody2D"]
+
+[node name="MovingPlatform" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1, -4.5)
+texture = ExtResource("1_wkayy")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_8q1gr")
