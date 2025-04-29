@@ -44,6 +44,13 @@ offset_right = 1152.0
 offset_bottom = 648.0
 color = Color(0.439216, 0.439216, 0.439216, 1)
 
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 592.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.286275, 0.286275, 0.286275, 1)
+
 [node name="WindowsSprites" type="Node2D" parent="."]
 
 [node name="WindowDecoration" type="Sprite2D" parent="WindowsSprites"]
@@ -136,6 +143,13 @@ theme_override_font_sizes/font_size = 24
 text = "DEMO"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 600.0
+offset_right = 48.0
+offset_bottom = 640.0
 
 [connection signal="pressed" from="WindowsSprites/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="WindowsSprites/VBoxContainer/NewGameButton2" to="." method="_on_new_game_button_pressed"]
