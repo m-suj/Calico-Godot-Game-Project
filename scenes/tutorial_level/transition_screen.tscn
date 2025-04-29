@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://boonyp0f2b7qx"]
 
-[ext_resource type="Script" path="res://scripts/level-test-2D/transition_screen.gd" id="1_smm65"]
+[ext_resource type="Script" path="res://scripts/tutorial_level/transition_screen.gd" id="1_smm65"]
 
 [sub_resource type="Animation" id="Animation_jle53"]
 length = 0.001

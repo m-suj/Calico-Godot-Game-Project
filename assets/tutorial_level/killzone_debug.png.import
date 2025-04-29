@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vhmdud6k06lt"
-path="res://.godot/imported/player_standing.png-d71cd5a2cbfc380880789ef92a46cee6.ctex"
+uid="uid://ct75murruff1"
+path="res://.godot/imported/killzone_debug.png-ff9ced5ec485499c63fd5095251669a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/level_2d/player_standing.png"
-dest_files=["res://.godot/imported/player_standing.png-d71cd5a2cbfc380880789ef92a46cee6.ctex"]
+source_file="res://assets/tutorial_level/killzone_debug.png"
+dest_files=["res://.godot/imported/killzone_debug.png-ff9ced5ec485499c63fd5095251669a0.ctex"]
 
 [params]
 

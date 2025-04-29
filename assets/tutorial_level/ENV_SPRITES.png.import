@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e12on3mdu657"
-path="res://.godot/imported/moving_platform.png-ffe44250b773d836909798148421e652.ctex"
+uid="uid://buptoq4kv8ebk"
+path="res://.godot/imported/ENV_SPRITES.png-38b393cbe17941c06477d939598f4ef8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/level_2d/env/moving_platform.png"
-dest_files=["res://.godot/imported/moving_platform.png-ffe44250b773d836909798148421e652.ctex"]
+source_file="res://assets/tutorial_level/ENV_SPRITES.png"
+dest_files=["res://.godot/imported/ENV_SPRITES.png-38b393cbe17941c06477d939598f4ef8.ctex"]
 
 [params]
 

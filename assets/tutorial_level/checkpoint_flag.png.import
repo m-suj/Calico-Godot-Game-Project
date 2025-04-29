@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct75murruff1"
-path="res://.godot/imported/killzone_debug.png-5dbaaf974ba05f7a2f86f6ef4048c573.ctex"
+uid="uid://c5naf6ortbsim"
+path="res://.godot/imported/checkpoint_flag.png-d78d9bc44c305013fe68ad2e162459e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/level_2d/killzone_debug.png"
-dest_files=["res://.godot/imported/killzone_debug.png-5dbaaf974ba05f7a2f86f6ef4048c573.ctex"]
+source_file="res://assets/tutorial_level/checkpoint_flag.png"
+dest_files=["res://.godot/imported/checkpoint_flag.png-d78d9bc44c305013fe68ad2e162459e5.ctex"]
 
 [params]
 

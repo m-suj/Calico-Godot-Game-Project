@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dmr3hc0alhoj"]
 
-[ext_resource type="PackedScene" uid="uid://c14d8lpyaalap" path="res://scenes/level-test-2D/bounce_area.tscn" id="1_lsafq"]
-[ext_resource type="Script" path="res://scripts/level-test-2D/basic_enemy.gd" id="1_upaob"]
-[ext_resource type="Script" path="res://scripts/level-test-2D/bounce_area.gd" id="3_f4wjf"]
+[ext_resource type="PackedScene" uid="uid://c14d8lpyaalap" path="res://scenes/tutorial_level/bounce_area.tscn" id="1_lsafq"]
+[ext_resource type="Script" path="res://scripts/tutorial_level/basic_enemy.gd" id="1_upaob"]
+[ext_resource type="Script" path="res://scripts/tutorial_level/bounce_area.gd" id="3_f4wjf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ftucs"]
 size = Vector2(40, 40)

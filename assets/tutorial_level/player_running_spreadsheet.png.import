@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl0731vowpgb7"
-path="res://.godot/imported/platform_tilesheet.png-ee68760bbbcf7c551c8a619632ae664b.ctex"
+uid="uid://cpwgvkjjeccxo"
+path="res://.godot/imported/player_running_spreadsheet.png-8beed643c6dce448a708e2aa36c07af6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/level_2d/env/platform_tilesheet.png"
-dest_files=["res://.godot/imported/platform_tilesheet.png-ee68760bbbcf7c551c8a619632ae664b.ctex"]
+source_file="res://assets/tutorial_level/player_running_spreadsheet.png"
+dest_files=["res://.godot/imported/player_running_spreadsheet.png-8beed643c6dce448a708e2aa36c07af6.ctex"]
 
 [params]
 
