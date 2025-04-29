@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b5uae0fh8vhy7"]
+[gd_scene load_steps=16 format=3 uid="uid://b5uae0fh8vhy7"]
 
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_yw527"]
 [ext_resource type="Texture2D" uid="uid://c6y13mm83tutx" path="res://assets/main_menu/button_hover.png" id="2_7h1dt"]
@@ -13,9 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://qf6tup3ivmf8" path="res://assets/main_menu/synthia.png" id="7_d4x4u"]
 
 [sub_resource type="Theme" id="Theme_hjwso"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g2id7"]
-texture = ExtResource("4_nnjh0")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r3obp"]
 texture = ExtResource("2_7h1dt")
@@ -114,7 +111,6 @@ theme = SubResource("Theme_hjwso")
 theme_override_colors/font_focus_color = Color(0.317647, 0.317647, 0.317647, 1)
 theme_override_colors/font_color = Color(0.317647, 0.317647, 0.317647, 1)
 theme_override_font_sizes/font_size = 21
-theme_override_styles/focus = SubResource("StyleBoxTexture_g2id7")
 theme_override_styles/hover = SubResource("StyleBoxTexture_r3obp")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_tdn40")
 theme_override_styles/normal = SubResource("StyleBoxTexture_l1kx7")
