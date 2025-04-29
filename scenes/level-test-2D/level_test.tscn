@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bcfi0x5hi5ba5" path="res://assets/level_2d/env/ground_tilesheet.png" id="3_05jnd"]
 [ext_resource type="PackedScene" uid="uid://dmr3hc0alhoj" path="res://scenes/level-test-2D/basic_enemy.tscn" id="3_42qvf"]
 [ext_resource type="PackedScene" uid="uid://bfu3mdjmvwu1m" path="res://scenes/level-test-2D/parallax_background.tscn" id="3_c0arm"]
-[ext_resource type="TileSet" uid="uid://c5starci8u7wl" path="res://scenes/level-test-2D/platform_tileset.tres" id="3_u1uin"]
+[ext_resource type="TileSet" uid="uid://bioqwfrac26tn" path="res://scenes/level-test-2D/platform_tileset.tres" id="3_u1uin"]
 [ext_resource type="PackedScene" uid="uid://dlyygo4x2tvr3" path="res://scenes/level-test-2D/killzone.tscn" id="4_em54t"]
 [ext_resource type="Texture2D" uid="uid://r631m0va27gs" path="res://assets/level_2d/env/flames_test.png" id="5_4d1nj"]
 [ext_resource type="Texture2D" uid="uid://ct75murruff1" path="res://assets/level_2d/killzone_debug.png" id="6_66no2"]
