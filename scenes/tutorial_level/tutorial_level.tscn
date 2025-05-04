@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dgpba0c0ris03" path="res://scenes/tutorial_level/player.tscn" id="11_28rl2"]
 [ext_resource type="PackedScene" uid="uid://c81gt1v08lrq6" path="res://scenes/tutorial_level/level_manager.tscn" id="12_whagd"]
 [ext_resource type="PackedScene" uid="uid://boonyp0f2b7qx" path="res://scenes/tutorial_level/transition_screen.tscn" id="13_mdotw"]
-[ext_resource type="PackedScene" uid="uid://bywua7dsgix1" path="res://scenes/tutorial_level/pause_menu.tscn" id="14_c7u81"]
+[ext_resource type="PackedScene" path="res://scenes/tutorial_level/pause_menu.tscn" id="14_c7u81"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tk3ur"]
 texture = ExtResource("3_47qeo")
