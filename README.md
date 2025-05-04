@@ -31,9 +31,24 @@ Na razie planuję skupić się na stworzeniu menu głównego (które będzie nas
 
 ## 28 kwietnia 2025r.:
 Nastąpił dość spory progress, na tym etapie rozwijane (i, przynajmniej bazowo, po części gotowe) elementy projektu to:
-  - menu główne - zrobiona została znaczna część graficznego interfejsu (bez efektów/animacji, przynajmniej na razie), a jedyną dostępną funkcją na razie jest rozpoczęcie nowej gry. Powoduje to przełączenie sceny na (na razie) poziom platformowy 2D
+  - menu główne - zrobiona została znaczna część graficznego interfejsu (bez efektów/animacji, przynajmniej na razie), a jedyną dostępną w tym momencie funkcją jest rozpoczęcie nowej gry. Powoduje to przełączenie sceny na (na razie) poziom platformowy 2D
   - sam poziom platformowy - przygotowane zostały tilesheety do platform/obiektów platformowych, oraz grafiki levela - umożliwiło to rozpoczęcie zastępowania placeholderów tymi właśnie docelowymi materiałami. Nadal brakuje pewnych wartych dodania elementów, takich jak trawa przy wystających blokach oraz sposobu zamaskowania przepaści, ale całość wygląda już w miarę ciekawie. 
 Podobnie jak z menu głównym, potencjalne efekty mogą być dodane raczej na późniejszym etapie rozwoju - póki co, główne skupienie będzie teraz na funkcjonalnych częściach projektu:
   - zapisywanie i wczytywanie stanu (na razie) poziomu (docelowo całej gry, włącznie z segmentami dialogowymi)
   - dopracowanie funkcjonalności menu głównego - dodanie paska na dole z datą+godziną i przyciskiem wyjścia z gry
   - in-game menu
+
+## 5 maja 2025r.:
+Prace przebiegały głównie na dwóch scenach: 
+  - menu główne - małe poprawki: 
+	  - graficzne, związane ze wyglądem stanów przycisków
+	  - funkcjonalne - dodanie paska nawigacji, na którym znajduje się aktualna data i godzina (pobierane z systemu) oraz przycisk wyjścia z gry, stylizowany na przycisk wyłączenia komputera
+  - menu pauzy (in-game menu) - dodano możliwość zapauzowania gry klawiszem ESCAPE i wyświetlenia interfejsu menu pauzy. Gracz ma w nim możliwość (na razie w funkcjonalnie uproszczonej, docelowej wersji):
+	  - kontynuowania gry (WZNÓW, przycisk minimalizacji na górnym pasku lub ponowne kliknięcie klawisza ESCAPE)
+	  - wyjścia do menu głównego (i w przyszłości połowicznego/-, automatycznego zapisu stanu gru)
+	  - wyłączenia gry (WYJDŹ Z GRY, przycisk wyłączenia okna na górnym pasku)
+
+Dalsze plany na ten moment:
+	- skupić się na systemie zapisów gry (póki co samego poziomu)
+	- zacząć dodawać przeciwników do poziomu - wliczając w to ich zachowanie, animacje oraz konsekwencje starć z nimi
+	- ewentualne rzeczy po konsultacji z zarządcą projektu
