@@ -4,6 +4,7 @@ extends Node
 @onready var level_restart: Timer = $"LevelRestartTimer"
 @onready var transition_screen: TransitionScreen = $"TransitionScreen"
 @onready var player: Player2D = $"../Player"
+
 var current_checkpoint = null
 
 
@@ -18,7 +19,6 @@ func _ready() -> void:
 	var killzones = $"../Environment/Killzones".get_children()
 	for killzone in killzones:
 		killzone.player_fell.connect(_on_player_fell)
-
 
 
 func _on_checkpoint_updated(checkpoint) -> void:

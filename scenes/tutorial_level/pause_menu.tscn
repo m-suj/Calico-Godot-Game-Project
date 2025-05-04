@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://bywua7dsgix1"]
+
+[ext_resource type="Script" path="res://scripts/tutorial_level/pause_menu.gd" id="1_6slto"]
+[ext_resource type="Script" path="res://scripts/tutorial_level/resume_button.gd" id="1_t7iuc"]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6slto")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.25098)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 128.0
+offset_right = 768.0
+offset_bottom = 448.0
+color = Color(0.493545, 0.493546, 0.493546, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 128.0
+offset_right = 768.0
+offset_bottom = 448.0
+alignment = 1
+
+[node name="ResumeButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "resume"
+script = ExtResource("1_t7iuc")
+
+[node name="MainMenuButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "main menu"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "quit"
+
+[connection signal="pressed" from="VBoxContainer/ResumeButton" to="VBoxContainer/ResumeButton" method="_on_pressed"]

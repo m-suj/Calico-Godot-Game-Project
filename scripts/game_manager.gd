@@ -6,8 +6,6 @@ var fullscreen = false
 
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("menu"):
-		_toggle_ingame_menu()
 	if Input.is_action_just_pressed("fullscreen"):
 		_toggle_fullscreen()
 
