@@ -20,3 +20,9 @@ func _on_resume_button_pressed() -> void:
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_main_menu_button_pressed() -> void:
+	# TODO: dialog zapytania o wyjście do menu głównego
+	# TODO: zapisanie stanu gry
+	get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")
