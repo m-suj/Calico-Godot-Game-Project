@@ -74,6 +74,7 @@ fullscreen={
 
 [layer_names]
 
+2d_render/layer_2="UI"
 2d_physics/layer_1="terrain"
 2d_physics/layer_2="bounceable"
 

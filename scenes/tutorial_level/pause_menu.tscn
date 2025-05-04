@@ -1,0 +1,117 @@
+[gd_scene load_steps=15 format=3 uid="uid://bywua7dsgix1"]
+
+[ext_resource type="Script" path="res://scripts/tutorial_level/pause_menu.gd" id="1_6slto"]
+[ext_resource type="Texture2D" uid="uid://dxdioy0q3nhtd" path="res://assets/tutorial_level/pause_menu/frame.png" id="2_oiclu"]
+[ext_resource type="Texture2D" uid="uid://vmqq86nsvrpu" path="res://assets/tutorial_level/pause_menu/minimize_button_normal.png" id="3_v1ll5"]
+[ext_resource type="Texture2D" uid="uid://dbajvtd6v1rmb" path="res://assets/tutorial_level/pause_menu/minimize_button_pressed.png" id="4_eldsm"]
+[ext_resource type="Texture2D" uid="uid://dfx1wi45j8lae" path="res://assets/tutorial_level/pause_menu/exit_button_normal.png" id="4_x24qv"]
+[ext_resource type="Texture2D" uid="uid://dhxau28p0oxls" path="res://assets/tutorial_level/pause_menu/action_button_hover.png" id="5_sjbm3"]
+[ext_resource type="Texture2D" uid="uid://46adxjg6xcxx" path="res://assets/tutorial_level/pause_menu/minimize_button_hover.png" id="5_tefa7"]
+[ext_resource type="Texture2D" uid="uid://cums4kdpp3di1" path="res://assets/tutorial_level/pause_menu/action_button_pressed.png" id="6_l7fo2"]
+[ext_resource type="Texture2D" uid="uid://cewrv1ydy568r" path="res://assets/tutorial_level/pause_menu/action_button_normal.png" id="7_p2bk4"]
+[ext_resource type="Texture2D" uid="uid://bektry7ae05ns" path="res://assets/tutorial_level/pause_menu/exit_button_pressed.png" id="7_vdglr"]
+[ext_resource type="Texture2D" uid="uid://deoim6iup8rqw" path="res://assets/tutorial_level/pause_menu/exit_button_hover.png" id="8_nuey4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bd2hy"]
+texture = ExtResource("5_sjbm3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0iqlb"]
+texture = ExtResource("6_l7fo2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kjro4"]
+texture = ExtResource("7_p2bk4")
+
+[node name="PauseMenu" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6slto")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.266667)
+
+[node name="PauseMenuFrame" type="Sprite2D" parent="."]
+position = Vector2(576, 320)
+texture = ExtResource("2_oiclu")
+
+[node name="FrameButtonsContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 708.0
+offset_top = 62.0
+offset_right = 797.0
+offset_bottom = 120.0
+theme_override_constants/separation = 5
+
+[node name="MinimizeButton" type="TextureButton" parent="FrameButtonsContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_v1ll5")
+texture_pressed = ExtResource("4_eldsm")
+texture_hover = ExtResource("5_tefa7")
+
+[node name="ExitButton" type="TextureButton" parent="FrameButtonsContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_x24qv")
+texture_pressed = ExtResource("7_vdglr")
+texture_hover = ExtResource("8_nuey4")
+
+[node name="ActionButtonsContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 128.0
+offset_right = 768.0
+offset_bottom = 448.0
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="ResumeButton" type="Button" parent="ActionButtonsContainer"]
+custom_minimum_size = Vector2(0, 66)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxTexture_bd2hy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0iqlb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_kjro4")
+text = "WZNÓW"
+
+[node name="OptionsButton" type="Button" parent="ActionButtonsContainer"]
+custom_minimum_size = Vector2(0, 66)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxTexture_bd2hy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0iqlb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_kjro4")
+text = "OPCJE"
+
+[node name="MainMenuButton" type="Button" parent="ActionButtonsContainer"]
+custom_minimum_size = Vector2(0, 66)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxTexture_bd2hy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0iqlb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_kjro4")
+text = "WYJDŹ DO MENU"
+
+[node name="Spacer" type="Control" parent="ActionButtonsContainer"]
+custom_minimum_size = Vector2(0, 92)
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="ActionButtonsContainer"]
+custom_minimum_size = Vector2(0, 66)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxTexture_bd2hy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0iqlb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_kjro4")
+text = "WYJDŹ Z GRY"
+
+[connection signal="pressed" from="FrameButtonsContainer/MinimizeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="FrameButtonsContainer/ExitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="ActionButtonsContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="ActionButtonsContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="ActionButtonsContainer/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://ctj6787jiv8ni"]
+[gd_scene load_steps=28 format=4 uid="uid://ctj6787jiv8ni"]
 
 [ext_resource type="PackedScene" uid="uid://dmr3hc0alhoj" path="res://scenes/tutorial_level/basic_enemy.tscn" id="1_62s16"]
 [ext_resource type="PackedScene" uid="uid://bfu3mdjmvwu1m" path="res://scenes/tutorial_level/parallax_background.tscn" id="2_x2f4n"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dgpba0c0ris03" path="res://scenes/tutorial_level/player.tscn" id="11_28rl2"]
 [ext_resource type="PackedScene" uid="uid://c81gt1v08lrq6" path="res://scenes/tutorial_level/level_manager.tscn" id="12_whagd"]
 [ext_resource type="PackedScene" uid="uid://boonyp0f2b7qx" path="res://scenes/tutorial_level/transition_screen.tscn" id="13_mdotw"]
+[ext_resource type="PackedScene" uid="uid://bywua7dsgix1" path="res://scenes/tutorial_level/pause_menu.tscn" id="14_c7u81"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tk3ur"]
 texture = ExtResource("3_47qeo")
@@ -925,6 +926,13 @@ limit_bottom = 576
 
 [node name="TransitionScreen" parent="LevelManager" instance=ExtResource("13_mdotw")]
 visible = false
+
+[node name="PauseLayer" type="CanvasLayer" parent="LevelManager"]
+
+[node name="PauseMenu" parent="LevelManager/PauseLayer" instance=ExtResource("14_c7u81")]
+process_mode = 3
+visible = false
+visibility_layer = 2
 
 [connection signal="body_entered" from="Environment/Platforms/MovingPlatforms/MPVertical/Area2D" to="Environment/Platforms/MovingPlatforms/MPVertical" method="_on_body_entered"]
 [connection signal="transition_finished" from="LevelManager/TransitionScreen" to="LevelManager" method="_on_transition_finished"]
