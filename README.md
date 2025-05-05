@@ -52,6 +52,6 @@ Prace przebiegały głównie na dwóch scenach:
 	  - wyłączenia gry (WYJDŹ Z GRY, przycisk wyłączenia okna na górnym pasku)
 
 Dalsze plany na ten moment:
-	- skupić się na systemie zapisów gry (póki co samego poziomu)
-	- zacząć dodawać przeciwników do poziomu - wliczając w to ich zachowanie, animacje oraz konsekwencje starć z nimi
-	- ewentualne rzeczy po konsultacji z zarządcą projektu
+  - skupić się na systemie zapisów gry (póki co samego poziomu)
+  - zacząć dodawać przeciwników do poziomu - wliczając w to ich zachowanie, animacje oraz konsekwencje starć z nimi
+  - ewentualne rzeczy po konsultacji z zarządcą projektu
