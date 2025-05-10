@@ -7,7 +7,7 @@ Grafika/Assety: Custom
 
 Typ gry: Platformówka 2D z elementami fabularnymi i sekwencjami "visual novel"
 
-###Poniżej znajduje się okresowa dokumentacja postępów pracy nad projektem. Dokumentacja ta jest sporządzana, gdy zachodzą większe zmiany w projekcie, o których warto wspomnieć i opisać 
+### Poniżej znajduje się okresowa dokumentacja postępów pracy nad projektem. Dokumentacja ta jest sporządzana, gdy zachodzą większe zmiany w projekcie, o których warto wspomnieć i opisać 
 
 ## 9 grudnia 2024r.:
 Projekt jest w bardzo wczesnej fazie - dopiero co powstał. Wrzucony został initial commit do etapu 1. obecnego taska, projekt spełnia naprawdę podstawowe założenia tego etapu - jest to praktycznie szkielet, na którym wraz z feedbackami i kolejnymi pracami nad nim będzie dostosowywany i będzie nabierał kształtu.
