@@ -24,29 +24,28 @@ texture = ExtResource("7_p2bk4")
 [node name="PauseMenu" type="Control"]
 process_mode = 2
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.6
+anchor_bottom = 0.6
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6slto")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 color = Color(0, 0, 0, 0.266667)
 
 [node name="PauseMenuFrame" type="Sprite2D" parent="."]
-position = Vector2(576, 320)
+position = Vector2(988, 534)
 texture = ExtResource("2_oiclu")
 
 [node name="FrameButtonsContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 708.0
-offset_top = 62.0
-offset_right = 797.0
-offset_bottom = 120.0
+offset_left = 1120.0
+offset_top = 276.0
+offset_right = 1209.0
+offset_bottom = 334.0
 theme_override_constants/separation = 5
 
 [node name="MinimizeButton" type="TextureButton" parent="FrameButtonsContainer"]
@@ -63,10 +62,10 @@ texture_hover = ExtResource("8_nuey4")
 
 [node name="ActionButtonsContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 384.0
-offset_top = 128.0
-offset_right = 768.0
-offset_bottom = 448.0
+offset_left = 796.0
+offset_top = 342.0
+offset_right = 1180.0
+offset_bottom = 758.0
 theme_override_constants/separation = 15
 alignment = 1
 

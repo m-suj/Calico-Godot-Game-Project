@@ -17,12 +17,16 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-InteractionManager="*res://interaction/interaction_manager.tscn"
 GameManager="*res://scripts/game_manager.gd"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
 window/stretch/mode="viewport"
+window/size/initial_window_width=1152
+window/size/initial_window_height=648
 
 [editor]
 

@@ -1,8 +1,7 @@
 extends Node
 
 
-var ingame_menu_opened = false
-var fullscreen = false
+var fullscreen = true
 
 
 func _process(delta: float) -> void:
@@ -10,16 +9,13 @@ func _process(delta: float) -> void:
 		_toggle_fullscreen()
 
 
-func _toggle_ingame_menu() -> void:
-	if ingame_menu_opened:
-		print("menu closed!")
-	else:
-		print("menu opened!")
-	ingame_menu_opened = !ingame_menu_opened
-
 func _toggle_fullscreen() -> void:
 	if fullscreen:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		var screen_size = DisplayServer.screen_get_size()
+		var window_size = Vector2i(1152, 648)
+		DisplayServer.window_set_size(window_size)
+		DisplayServer.window_set_position((screen_size - window_size) / 2)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	fullscreen = !fullscreen

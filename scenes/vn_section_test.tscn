@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4bwyqcmb268x"]
+
+[ext_resource type="Texture2D" uid="uid://dfjojvtauwu4a" path="res://assets/test_kitchen_bg.png" id="1_2plvr"]
+
+[node name="VnSectionTest" type="Node2D"]
+
+[node name="TestKitchenBg" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_2plvr")
