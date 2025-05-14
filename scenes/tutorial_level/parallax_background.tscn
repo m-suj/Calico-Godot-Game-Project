@@ -1,13 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://bfu3mdjmvwu1m"]
 
-[ext_resource type="Texture2D" uid="uid://b6qf33rg0s4ry" path="res://assets/level_2d/env/bg.png" id="1_i1a16"]
+[ext_resource type="Texture2D" uid="uid://b6qf33rg0s4ry" path="res://assets/tutorial_level/env/bg.png" id="1_i1a16"]
 
 [node name="Parallax Background" type="Node2D"]
 texture_filter = 1
 
 [node name="Mid" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.5, 0.5)
-repeat_size = Vector2(536, 0)
+repeat_size = Vector2(610, 0)
 repeat_times = 3
 
 [node name="Bg" type="Sprite2D" parent="Mid"]
