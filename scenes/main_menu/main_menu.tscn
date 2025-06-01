@@ -12,8 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://dof8v0wb5wa3l" path="res://assets/main_menu/button2_pressed.png" id="9_4ymre"]
 [ext_resource type="Texture2D" uid="uid://drc3w0xfsvnr2" path="res://assets/main_menu/button2_normal.png" id="10_outfa"]
 
-[sub_resource type="Theme" id="Theme_hjwso"]
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y8vjc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r3obp"]
@@ -24,6 +22,8 @@ texture = ExtResource("9_4ymre")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v86e6"]
 texture = ExtResource("10_outfa")
+
+[sub_resource type="Theme" id="Theme_hjwso"]
 
 [node name="MainMenu" type="Control"]
 texture_filter = 1
@@ -111,7 +111,6 @@ alignment = 1
 [node name="NewGameButton" type="Button" parent="WindowsSprites/VBoxContainer"]
 custom_minimum_size = Vector2(0, 46)
 layout_mode = 2
-theme = SubResource("Theme_hjwso")
 theme_override_colors/font_hover_color = Color(0.988235, 0.988235, 0.988235, 1)
 theme_override_colors/font_pressed_color = Color(0.560784, 0.560784, 0.560784, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
