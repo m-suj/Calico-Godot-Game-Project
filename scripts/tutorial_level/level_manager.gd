@@ -1,17 +1,16 @@
 extends Node
 
-
 @onready var level_restart: Timer = $"LevelRestartTimer"
 @onready var transition_screen: TransitionScreen = $"TransitionScreen"
 @onready var player: Player2D = $"../Player"
 
 var current_checkpoint = null
+@onready var level_start_point = player.global_position
 
 
 func _ready() -> void:
 	# Connecting to checkpoints
 	var checkpoints = get_tree().get_nodes_in_group("Checkpoints")
-	current_checkpoint = checkpoints[0]
 	for checkpoint in checkpoints:
 		checkpoint.checkpoint_updated.connect(_on_checkpoint_updated)
 	
@@ -19,6 +18,10 @@ func _ready() -> void:
 	var killzones = $"../Environment/Killzones".get_children()
 	for killzone in killzones:
 		killzone.player_fell.connect(_on_player_fell)
+	# Connecting to enemies
+	var enemies = $"../Environment/Enemies".get_children()
+	for enemy in enemies:
+		enemy.get_node("Killzone").player_fell.connect(_on_player_fell)
 
 
 func _on_checkpoint_updated(checkpoint) -> void:
@@ -31,7 +34,10 @@ func _on_player_fell() -> void:
 
 
 func _on_transition_finished() -> void:
-	player.position = current_checkpoint.global_position
+	if current_checkpoint == null:
+		player.position = level_start_point
+	else:
+		player.position = current_checkpoint.global_position
 	player.on_respawn()
 	level_restart.start()
 	# TODO: You died - restart confirmation

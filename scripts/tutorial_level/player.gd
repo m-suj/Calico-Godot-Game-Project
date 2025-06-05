@@ -4,7 +4,7 @@ class_name Player2D
 
 const SPEED = 60.0
 const JUMP_VELOCITY = -350.0
-const BOUNCE_VELOCITY = -200.0
+const BOUNCE_VELOCITY = -400.0
 const GRAVITY = Vector2(0, 980)
 
 var jump_buffer: bool = false

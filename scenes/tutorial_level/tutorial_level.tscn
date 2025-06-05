@@ -791,12 +791,6 @@ animations = [{
 
 [node name="Environment" type="Node" parent="."]
 
-[node name="Enemies" type="Node" parent="Environment"]
-
-[node name="Basic Enemy" parent="Environment/Enemies" instance=ExtResource("1_62s16")]
-z_index = -2
-position = Vector2(129, 485)
-
 [node name="Terrain" type="Node" parent="Environment"]
 
 [node name="ParallaxBg" parent="Environment/Terrain" instance=ExtResource("2_x2f4n")]
@@ -873,6 +867,11 @@ autoplay = "move3_vertical"
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_1ovqi")
 
+[node name="Enemies" type="Node" parent="Environment"]
+
+[node name="Basic Enemy" parent="Environment/Enemies" instance=ExtResource("1_62s16")]
+position = Vector2(320, 544)
+
 [node name="Killzones" type="Node" parent="Environment"]
 
 [node name="Killzone" parent="Environment/Killzones" instance=ExtResource("7_cwj04")]
@@ -916,7 +915,7 @@ position = Vector2(1208, 472)
 
 [node name="Player" parent="." instance=ExtResource("11_28rl2")]
 z_index = 2
-position = Vector2(1080, 420)
+position = Vector2(120, 536)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4.5, 4.5)

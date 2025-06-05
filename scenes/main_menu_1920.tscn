@@ -46,6 +46,7 @@ offset_bottom = 1080.0
 color = Color(0.286275, 0.286275, 0.286275, 1)
 
 [node name="DateTime" type="Label" parent="NavBar"]
+layout_mode = 0
 offset_left = 1728.0
 offset_right = 1892.0
 offset_bottom = 88.0
@@ -86,6 +87,7 @@ position = Vector2(1649, 764)
 texture = ExtResource("6_hhcmu")
 
 [node name="ButtonsContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 792.0
 offset_top = 480.0
 offset_right = 1032.0
