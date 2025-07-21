@@ -28,14 +28,14 @@ func _physics_process(delta: float) -> void:
 			velocity.y = JUMP_VELOCITY
 		else:
 			jump_buffer = true
-	
+
 	if Input.is_action_just_released("jump"):
 		jump_buffer = false
-	
+
 	if is_on_floor() and jump_buffer:
 		velocity.y = JUMP_VELOCITY
 		jump_buffer = false
-		
+
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("move_left", "move_right")
@@ -46,15 +46,15 @@ func _physics_process(delta: float) -> void:
 		sprite_player.flip_h = direction < 0
 		# Apply acceleration
 		velocity.x += direction * SPEED
-	
+
 	# Apply friction/resistance/whatever
 	velocity.x *= 0.75
 	velocity.y *= 0.99
-	
+
 	_check_bounce(delta)
 	move_and_slide()
 	apply_floor_snap()
-	
+
 
 
 func _check_bounce(delta):

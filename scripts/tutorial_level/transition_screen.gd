@@ -11,7 +11,7 @@ signal transition_finished
 func fade_in():
 	visible = true
 	animation_player.play("fade_in")
-	
+
 func fade_out():
 	visible = true
 	animation_player.play("fade_out")

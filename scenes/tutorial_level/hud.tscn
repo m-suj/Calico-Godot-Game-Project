@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://d32dkj0ve1us7"]
+
+[ext_resource type="Texture2D" uid="uid://dmt8ieqgwkfua" path="res://assets/tutorial_level/GUI/player_head.png" id="1_r1d42"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pd7om"]
+font_size = 64
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Lives" type="Node" parent="."]
+
+[node name="Title" type="Label" parent="Lives"]
+offset_right = 272.0
+offset_bottom = 128.0
+text = "Życia:"
+label_settings = SubResource("LabelSettings_pd7om")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="Lives"]
+offset_left = 96.0
+offset_top = 96.0
+offset_right = 232.0
+offset_bottom = 224.0
+text = "x3"
+label_settings = SubResource("LabelSettings_pd7om")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Lives"]
+position = Vector2(88, 160)
+scale = Vector2(4, 4)
+texture = ExtResource("1_r1d42")
+
+[node name="HP" type="Node" parent="."]
+
+[node name="Title+Value" type="Label" parent="HP"]
+offset_left = 384.0
+offset_right = 656.0
+offset_bottom = 128.0
+text = "PŻ: 0"
+label_settings = SubResource("LabelSettings_pd7om")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Coins" type="Node" parent="."]

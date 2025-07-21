@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://46adxjg6xcxx"
-path="res://.godot/imported/minimize_button_hover.png-6f1f6786d3213a9ec960ff861c56da86.ctex"
+uid="uid://dmt8ieqgwkfua"
+path="res://.godot/imported/player_head.png-bf7b94fe8319350e0916342f41c82331.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tutorial_level/pause_menu/minimize_button_hover.png"
-dest_files=["res://.godot/imported/minimize_button_hover.png-6f1f6786d3213a9ec960ff861c56da86.ctex"]
+source_file="res://assets/tutorial_level/GUI/player_head.png"
+dest_files=["res://.godot/imported/player_head.png-bf7b94fe8319350e0916342f41c82331.ctex"]
 
 [params]
 

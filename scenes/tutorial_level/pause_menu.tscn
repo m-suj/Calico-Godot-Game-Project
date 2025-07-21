@@ -1,16 +1,16 @@
 [gd_scene load_steps=15 format=3 uid="uid://bywua7dsgix1"]
 
 [ext_resource type="Script" path="res://scripts/tutorial_level/pause_menu.gd" id="1_6slto"]
-[ext_resource type="Texture2D" uid="uid://dxdioy0q3nhtd" path="res://assets/tutorial_level/pause_menu/frame.png" id="2_oiclu"]
-[ext_resource type="Texture2D" uid="uid://vmqq86nsvrpu" path="res://assets/tutorial_level/pause_menu/minimize_button_normal.png" id="3_v1ll5"]
-[ext_resource type="Texture2D" uid="uid://dbajvtd6v1rmb" path="res://assets/tutorial_level/pause_menu/minimize_button_pressed.png" id="4_eldsm"]
-[ext_resource type="Texture2D" uid="uid://dfx1wi45j8lae" path="res://assets/tutorial_level/pause_menu/exit_button_normal.png" id="4_x24qv"]
-[ext_resource type="Texture2D" uid="uid://dhxau28p0oxls" path="res://assets/tutorial_level/pause_menu/action_button_hover.png" id="5_sjbm3"]
-[ext_resource type="Texture2D" uid="uid://46adxjg6xcxx" path="res://assets/tutorial_level/pause_menu/minimize_button_hover.png" id="5_tefa7"]
-[ext_resource type="Texture2D" uid="uid://cums4kdpp3di1" path="res://assets/tutorial_level/pause_menu/action_button_pressed.png" id="6_l7fo2"]
-[ext_resource type="Texture2D" uid="uid://cewrv1ydy568r" path="res://assets/tutorial_level/pause_menu/action_button_normal.png" id="7_p2bk4"]
-[ext_resource type="Texture2D" uid="uid://bektry7ae05ns" path="res://assets/tutorial_level/pause_menu/exit_button_pressed.png" id="7_vdglr"]
-[ext_resource type="Texture2D" uid="uid://deoim6iup8rqw" path="res://assets/tutorial_level/pause_menu/exit_button_hover.png" id="8_nuey4"]
+[ext_resource type="Texture2D" uid="uid://dxdioy0q3nhtd" path="res://assets/tutorial_level/GUI/frame.png" id="2_oiclu"]
+[ext_resource type="Texture2D" uid="uid://vmqq86nsvrpu" path="res://assets/tutorial_level/GUI/minimize_button_normal.png" id="3_v1ll5"]
+[ext_resource type="Texture2D" uid="uid://dbajvtd6v1rmb" path="res://assets/tutorial_level/GUI/minimize_button_pressed.png" id="4_eldsm"]
+[ext_resource type="Texture2D" uid="uid://dfx1wi45j8lae" path="res://assets/tutorial_level/GUI/exit_button_normal.png" id="4_x24qv"]
+[ext_resource type="Texture2D" uid="uid://dhxau28p0oxls" path="res://assets/tutorial_level/GUI/action_button_hover.png" id="5_sjbm3"]
+[ext_resource type="Texture2D" uid="uid://46adxjg6xcxx" path="res://assets/tutorial_level/GUI/minimize_button_hover.png" id="5_tefa7"]
+[ext_resource type="Texture2D" uid="uid://cums4kdpp3di1" path="res://assets/tutorial_level/GUI/action_button_pressed.png" id="6_l7fo2"]
+[ext_resource type="Texture2D" uid="uid://cewrv1ydy568r" path="res://assets/tutorial_level/GUI/action_button_normal.png" id="7_p2bk4"]
+[ext_resource type="Texture2D" uid="uid://bektry7ae05ns" path="res://assets/tutorial_level/GUI/exit_button_pressed.png" id="7_vdglr"]
+[ext_resource type="Texture2D" uid="uid://deoim6iup8rqw" path="res://assets/tutorial_level/GUI/exit_button_hover.png" id="8_nuey4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bd2hy"]
 texture = ExtResource("5_sjbm3")
@@ -24,8 +24,9 @@ texture = ExtResource("7_p2bk4")
 [node name="PauseMenu" type="Control"]
 process_mode = 2
 layout_mode = 3
-anchor_right = 0.6
-anchor_bottom = 0.6
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6slto")

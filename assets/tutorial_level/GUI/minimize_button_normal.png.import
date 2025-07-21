@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cewrv1ydy568r"
-path="res://.godot/imported/action_button_normal.png-889e3109fb7cb330f3ed959ebbd57236.ctex"
+uid="uid://vmqq86nsvrpu"
+path="res://.godot/imported/minimize_button_normal.png-cae7ebf3d30e4aedab62ab9e6c670ac7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tutorial_level/pause_menu/action_button_normal.png"
-dest_files=["res://.godot/imported/action_button_normal.png-889e3109fb7cb330f3ed959ebbd57236.ctex"]
+source_file="res://assets/tutorial_level/GUI/minimize_button_normal.png"
+dest_files=["res://.godot/imported/minimize_button_normal.png-cae7ebf3d30e4aedab62ab9e6c670ac7.ctex"]
 
 [params]
 

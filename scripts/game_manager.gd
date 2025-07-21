@@ -1,10 +1,10 @@
 extends Node
 
 
-var fullscreen = true
+var fullscreen: bool = true
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("fullscreen"):
 		_toggle_fullscreen()
 
@@ -12,10 +12,11 @@ func _process(delta: float) -> void:
 func _toggle_fullscreen() -> void:
 	if fullscreen:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-		var screen_size = DisplayServer.screen_get_size()
-		var window_size = Vector2i(1152, 648)
+		var screen_size: Vector2i = DisplayServer.screen_get_size()
+		var window_size: Vector2i = Vector2i(1152, 648)
 		DisplayServer.window_set_size(window_size)
 		DisplayServer.window_set_position((screen_size - window_size) / 2)
+		var _x: int = 5
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	fullscreen = !fullscreen

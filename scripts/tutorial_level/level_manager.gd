@@ -13,7 +13,7 @@ func _ready() -> void:
 	var checkpoints = get_tree().get_nodes_in_group("Checkpoints")
 	for checkpoint in checkpoints:
 		checkpoint.checkpoint_updated.connect(_on_checkpoint_updated)
-	
+
 	# Connecting to killzones
 	var killzones = $"../Environment/Killzones".get_children()
 	for killzone in killzones:
