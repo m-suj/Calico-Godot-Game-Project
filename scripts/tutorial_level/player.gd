@@ -2,18 +2,38 @@ extends CharacterBody2D
 class_name Player2D
 
 
-const SPEED = 60.0
-const JUMP_VELOCITY = -350.0
-const BOUNCE_VELOCITY = -400.0
-const GRAVITY = Vector2(0, 980)
+@export var enemies: Node
+
+const SPEED: float           = 60.0
+const JUMP_VELOCITY: float   = -350.0
+const BOUNCE_VELOCITY: float = -400.0
+const GRAVITY: Vector2       = Vector2(0, 980)
 
 var jump_buffer: bool = false
 
-var is_alive = true
+signal health_changed(new_health)
+signal lives_changed()
+@export var max_health: int = 3
+var health: int = 3
+var lives: int = 3
+
+var is_alive: bool = true
+var has_iframes: bool = false
+@onready var hitbox: CollisionShape2D = $"CollisionShape2D"
+@onready var iframe_timer: Timer = $"Iframe Timer"
 
 @onready var bounce_raycasts: Node2D = $BounceRaycasts
 @onready var sprite_player: AnimatedSprite2D = $AnimatedSprite2D
 
+
+func take_damage(damage: int):
+	health -= damage
+	print("I took damage, I have now {} health and {} lives".format([health, lives], "{}"))
+	health_changed.emit(health)
+	hitbox.disabled = true
+	iframe_timer.start()
+	if health <= 0:
+		lose_life()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -54,8 +74,7 @@ func _physics_process(delta: float) -> void:
 	_check_bounce(delta)
 	move_and_slide()
 	apply_floor_snap()
-
-
+	
 
 func _check_bounce(delta):
 	if velocity.y > 0:
@@ -72,12 +91,25 @@ func bounce(bounce_velocity = BOUNCE_VELOCITY):
 	velocity.y = bounce_velocity
 
 
-func on_fell():
+func lose_life():
+	lives -= 1
+	lives_changed.emit()
+	health = max_health
+	if lives <= 0:
+		print("I died")
 	is_alive = false
-	print('I fell')
+	print('I lost 1 life')
 	$AnimatedSprite2D.rotate(deg_to_rad(-90))
+	
+
+func on_fell():
+	lose_life()
 
 func on_respawn():
 	is_alive = true
 	print('I respawned')
 	$AnimatedSprite2D.rotate(deg_to_rad(90))
+
+
+func _on_iframe_end() -> void:
+	hitbox.disabled = false

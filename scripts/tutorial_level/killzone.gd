@@ -2,13 +2,13 @@ extends Area2D
 
 @onready var timer = $Timer
 
-signal player_fell
+#signal player_fell
 
 func _on_body_entered(body):
 	if body is Player2D:
 		if body.is_alive:
 			body.on_fell()
-			player_fell.emit()
+#			player_fell.emit()
 
 
 func _on_timer_timeout():

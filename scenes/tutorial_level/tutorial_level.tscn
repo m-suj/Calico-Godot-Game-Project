@@ -913,9 +913,10 @@ position = Vector2(832, 456)
 [node name="Checkpoint3" parent="Environment/Checkpoints" groups=["Checkpoints"] instance=ExtResource("10_31nrx")]
 position = Vector2(1208, 472)
 
-[node name="Player" parent="." instance=ExtResource("11_28rl2")]
+[node name="Player" parent="." node_paths=PackedStringArray("enemies") instance=ExtResource("11_28rl2")]
 z_index = 2
 position = Vector2(120, 536)
+enemies = NodePath("../Environment/Enemies")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4.5, 4.5)
@@ -934,7 +935,6 @@ position_smoothing_enabled = true
 process_mode = 3
 visible = false
 visibility_layer = 2
-anchors_preset = 15
 
 [connection signal="body_entered" from="Environment/Platforms/MovingPlatforms/MPVertical/Area2D" to="Environment/Platforms/MovingPlatforms/MPVertical" method="_on_body_entered"]
 [connection signal="transition_finished" from="LevelManager/TransitionScreen" to="LevelManager" method="_on_transition_finished"]

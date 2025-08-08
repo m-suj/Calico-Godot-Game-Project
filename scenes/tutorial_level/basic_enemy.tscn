@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c14d8lpyaalap" path="res://scenes/tutorial_level/bounce_area.tscn" id="1_lsafq"]
 [ext_resource type="Script" path="res://scripts/tutorial_level/basic_enemy.gd" id="1_upaob"]
 [ext_resource type="Script" path="res://scripts/tutorial_level/bounce_area.gd" id="3_f4wjf"]
-[ext_resource type="PackedScene" uid="uid://dlyygo4x2tvr3" path="res://scenes/tutorial_level/killzone.tscn" id="4_t46ob"]
+[ext_resource type="PackedScene" uid="uid://la68t0w6rog7" path="res://scenes/tutorial_level/damage_area.tscn" id="4_n3icp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ftucs"]
 size = Vector2(40, 40)
@@ -27,8 +27,8 @@ offset_top = -40.0
 offset_right = 20.0
 color = Color(0.376471, 0.517647, 1, 1)
 
-[node name="Killzone" parent="." instance=ExtResource("4_t46ob")]
+[node name="Damage Area" parent="." instance=ExtResource("4_n3icp")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage Area"]
 position = Vector2(0, -17)
 shape = SubResource("RectangleShape2D_sb1w8")

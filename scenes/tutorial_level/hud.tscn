@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://d32dkj0ve1us7"]
+[gd_scene load_steps=3 format=3 uid="uid://bg1lfqlu3xi5x"]
 
 [ext_resource type="Texture2D" uid="uid://dmt8ieqgwkfua" path="res://assets/tutorial_level/GUI/player_head.png" id="1_r1d42"]
 
@@ -40,13 +40,22 @@ texture = ExtResource("1_r1d42")
 
 [node name="HP" type="Node" parent="."]
 
-[node name="Title+Value" type="Label" parent="HP"]
+[node name="Title" type="Label" parent="HP"]
 offset_left = 384.0
-offset_right = 656.0
-offset_bottom = 128.0
-text = "PŻ: 0"
+offset_top = 1.0
+offset_right = 644.0
+offset_bottom = 129.0
+text = "PŻ: "
 label_settings = SubResource("LabelSettings_pd7om")
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="HP"]
+offset_left = 575.0
+offset_right = 835.0
+offset_bottom = 128.0
+text = "3"
+label_settings = SubResource("LabelSettings_pd7om")
 vertical_alignment = 1
 
 [node name="Coins" type="Node" parent="."]
