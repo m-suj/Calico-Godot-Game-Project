@@ -21,6 +21,7 @@ lives_label = NodePath("Lives/Value")
 anchors_preset = 0
 
 [node name="Title" type="Label" parent="Lives"]
+layout_mode = 0
 offset_right = 272.0
 offset_bottom = 128.0
 text = "Życia:"
@@ -29,6 +30,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Value" type="Label" parent="Lives"]
+layout_mode = 0
 offset_left = 96.0
 offset_top = 96.0
 offset_right = 232.0
@@ -47,6 +49,7 @@ texture = ExtResource("1_r1d42")
 anchors_preset = 0
 
 [node name="Title" type="Label" parent="HP"]
+layout_mode = 0
 offset_left = 384.0
 offset_top = 1.0
 offset_right = 644.0
@@ -57,6 +60,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Value" type="Label" parent="HP"]
+layout_mode = 0
 offset_left = 575.0
 offset_right = 835.0
 offset_bottom = 128.0
