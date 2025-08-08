@@ -11,8 +11,8 @@ const GRAVITY: Vector2       = Vector2(0, 980)
 
 var jump_buffer: bool = false
 
-signal health_changed(new_health)
-signal lives_changed()
+signal health_changed(new_health: int)
+signal lives_changed(new_lives: int)
 @export var max_health: int = 3
 var health: int = 3
 var lives: int = 3
@@ -93,8 +93,7 @@ func bounce(bounce_velocity = BOUNCE_VELOCITY):
 
 func lose_life():
 	lives -= 1
-	lives_changed.emit()
-	health = max_health
+	lives_changed.emit(lives)
 	if lives <= 0:
 		print("I died")
 	is_alive = false
@@ -107,6 +106,8 @@ func on_fell():
 
 func on_respawn():
 	is_alive = true
+	health = max_health
+	health_changed.emit(health)
 	print('I respawned')
 	$AnimatedSprite2D.rotate(deg_to_rad(90))
 

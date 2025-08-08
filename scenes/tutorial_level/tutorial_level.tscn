@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://ctj6787jiv8ni"]
+[gd_scene load_steps=29 format=4 uid="uid://ctj6787jiv8ni"]
 
 [ext_resource type="PackedScene" uid="uid://dmr3hc0alhoj" path="res://scenes/tutorial_level/basic_enemy.tscn" id="1_62s16"]
 [ext_resource type="PackedScene" uid="uid://bfu3mdjmvwu1m" path="res://scenes/tutorial_level/parallax_background.tscn" id="2_x2f4n"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://c81gt1v08lrq6" path="res://scenes/tutorial_level/level_manager.tscn" id="12_whagd"]
 [ext_resource type="PackedScene" uid="uid://boonyp0f2b7qx" path="res://scenes/tutorial_level/transition_screen.tscn" id="13_mdotw"]
 [ext_resource type="PackedScene" uid="uid://bywua7dsgix1" path="res://scenes/tutorial_level/pause_menu.tscn" id="14_c7u81"]
+[ext_resource type="PackedScene" uid="uid://bg1lfqlu3xi5x" path="res://scenes/tutorial_level/hud.tscn" id="15_6y6vl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tk3ur"]
 texture = ExtResource("3_47qeo")
@@ -925,16 +926,23 @@ limit_left = 96
 limit_bottom = 576
 position_smoothing_enabled = true
 
-[node name="LevelManager" parent="." instance=ExtResource("12_whagd")]
+[node name="LevelManager" parent="." node_paths=PackedStringArray("hud") instance=ExtResource("12_whagd")]
+hud = NodePath("GUI Camera Overlays/HUD")
 
 [node name="TransitionScreen" parent="LevelManager" instance=ExtResource("13_mdotw")]
+layer = 2
 
 [node name="GUI Camera Overlays" type="CanvasLayer" parent="LevelManager"]
 
+[node name="HUD" parent="LevelManager/GUI Camera Overlays" node_paths=PackedStringArray("player") instance=ExtResource("15_6y6vl")]
+player = NodePath("../../../Player")
+
 [node name="PauseMenu" parent="LevelManager/GUI Camera Overlays" instance=ExtResource("14_c7u81")]
-process_mode = 3
 visible = false
 visibility_layer = 2
+z_index = 5
 
 [connection signal="body_entered" from="Environment/Platforms/MovingPlatforms/MPVertical/Area2D" to="Environment/Platforms/MovingPlatforms/MPVertical" method="_on_body_entered"]
+[connection signal="health_changed" from="Player" to="LevelManager/GUI Camera Overlays/HUD" method="_on_player_health_changed"]
+[connection signal="lives_changed" from="Player" to="LevelManager/GUI Camera Overlays/HUD" method="_on_player_lives_changed"]
 [connection signal="transition_finished" from="LevelManager/TransitionScreen" to="LevelManager" method="_on_transition_finished"]

@@ -1,19 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://bg1lfqlu3xi5x"]
+[gd_scene load_steps=4 format=3 uid="uid://bg1lfqlu3xi5x"]
 
+[ext_resource type="Script" path="res://scripts/tutorial_level/hud_manager.gd" id="1_3u2oh"]
 [ext_resource type="Texture2D" uid="uid://dmt8ieqgwkfua" path="res://assets/tutorial_level/GUI/player_head.png" id="1_r1d42"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pd7om"]
 font_size = 64
 
-[node name="HUD" type="Control"]
+[node name="HUD" type="Control" node_paths=PackedStringArray("health_label", "lives_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_3u2oh")
+health_label = NodePath("HP/Value")
+lives_label = NodePath("Lives/Value")
 
-[node name="Lives" type="Node" parent="."]
+[node name="Lives" type="Control" parent="."]
+anchors_preset = 0
 
 [node name="Title" type="Label" parent="Lives"]
 offset_right = 272.0
@@ -38,7 +43,8 @@ position = Vector2(88, 160)
 scale = Vector2(4, 4)
 texture = ExtResource("1_r1d42")
 
-[node name="HP" type="Node" parent="."]
+[node name="HP" type="Control" parent="."]
+anchors_preset = 0
 
 [node name="Title" type="Label" parent="HP"]
 offset_left = 384.0
@@ -58,4 +64,5 @@ text = "3"
 label_settings = SubResource("LabelSettings_pd7om")
 vertical_alignment = 1
 
-[node name="Coins" type="Node" parent="."]
+[node name="Coins" type="Control" parent="."]
+anchors_preset = 0

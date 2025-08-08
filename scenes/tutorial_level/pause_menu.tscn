@@ -22,7 +22,7 @@ texture = ExtResource("6_l7fo2")
 texture = ExtResource("7_p2bk4")
 
 [node name="PauseMenu" type="Control"]
-process_mode = 2
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,6 +35,7 @@ script = ExtResource("1_6slto")
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
+mouse_filter = 2
 color = Color(0, 0, 0, 0.266667)
 
 [node name="PauseMenuFrame" type="Sprite2D" parent="."]

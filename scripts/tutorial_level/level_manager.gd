@@ -3,6 +3,7 @@ extends Node
 @onready var level_restart: Timer = $"LevelRestartTimer"
 @onready var transition_screen: TransitionScreen = $"TransitionScreen"
 @onready var player: Player2D = $"../Player"
+@export var hud: HudManager
 
 var current_checkpoint = null
 @onready var level_start_point: Vector2 = player.global_position
@@ -18,7 +19,9 @@ func _ready() -> void:
 #	var killzones = $"../Environment/Killzones".get_children()
 #	for killzone in killzones:
 #		killzone.player_fell.connect(_on_player_fell)
-	player.lives_changed.connect(_on_player_fell)
+	player.lives_changed.connect(_on_player_lives_changed)
+	player.health_changed.connect(_on_player_took_damage)
+	hud.update()
 	# Connecting to enemies
 #	var enemies = $"../Environment/Enemies".get_children()
 #	for enemy in enemies:
@@ -30,8 +33,12 @@ func _on_checkpoint_updated(checkpoint) -> void:
 	current_checkpoint = checkpoint
 
 
-func _on_player_fell() -> void:
+func _on_player_lives_changed(_new_lives: int) -> void:
 	transition_screen.fade_out()
+	
+	
+func _on_player_took_damage(_new_health: int) -> void:
+	hud.update()
 
 
 func _on_transition_finished() -> void:
@@ -40,6 +47,7 @@ func _on_transition_finished() -> void:
 	else:
 		player.position = current_checkpoint.global_position
 	player.on_respawn()
+	hud.update()
 	level_restart.start()
 	# TODO: You died - restart confirmation
 
