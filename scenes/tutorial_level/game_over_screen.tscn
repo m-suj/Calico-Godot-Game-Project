@@ -1,0 +1,118 @@
+[gd_scene load_steps=16 format=3 uid="uid://do60jsds61i3v"]
+
+[ext_resource type="Script" path="res://scripts/tutorial_level/game_over_screen.gd" id="1_lvish"]
+[ext_resource type="Texture2D" uid="uid://dxdioy0q3nhtd" path="res://assets/tutorial_level/GUI/frame.png" id="2_14htc"]
+[ext_resource type="Texture2D" uid="uid://vmqq86nsvrpu" path="res://assets/tutorial_level/GUI/minimize_button_normal.png" id="3_sgt5v"]
+[ext_resource type="Texture2D" uid="uid://dbajvtd6v1rmb" path="res://assets/tutorial_level/GUI/minimize_button_pressed.png" id="4_gukyn"]
+[ext_resource type="Texture2D" uid="uid://46adxjg6xcxx" path="res://assets/tutorial_level/GUI/minimize_button_hover.png" id="5_6tqi4"]
+[ext_resource type="Texture2D" uid="uid://dfx1wi45j8lae" path="res://assets/tutorial_level/GUI/exit_button_normal.png" id="6_587fe"]
+[ext_resource type="Texture2D" uid="uid://bektry7ae05ns" path="res://assets/tutorial_level/GUI/exit_button_pressed.png" id="7_6rt5r"]
+[ext_resource type="Texture2D" uid="uid://deoim6iup8rqw" path="res://assets/tutorial_level/GUI/exit_button_hover.png" id="8_e2qep"]
+[ext_resource type="Texture2D" uid="uid://dhxau28p0oxls" path="res://assets/tutorial_level/GUI/action_button_hover.png" id="9_5fnrw"]
+[ext_resource type="Texture2D" uid="uid://cums4kdpp3di1" path="res://assets/tutorial_level/GUI/action_button_pressed.png" id="10_01prq"]
+[ext_resource type="Texture2D" uid="uid://cewrv1ydy568r" path="res://assets/tutorial_level/GUI/action_button_normal.png" id="11_y3cph"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mwk80"]
+font_size = 64
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fyltt"]
+texture = ExtResource("9_5fnrw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cg7sb"]
+texture = ExtResource("10_01prq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vnngu"]
+texture = ExtResource("11_y3cph")
+
+[node name="Game Over Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lvish")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 288.0
+text = "PRZEGRAŁEŚ :("
+label_settings = SubResource("LabelSettings_mwk80")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+color = Color(0.513726, 0, 0, 0.266667)
+
+[node name="Pause Menu Frame" type="Sprite2D" parent="."]
+position = Vector2(960, 534)
+texture = ExtResource("2_14htc")
+
+[node name="Frame Buttons Container" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1092.0
+offset_top = 276.0
+offset_right = 1181.0
+offset_bottom = 334.0
+theme_override_constants/separation = 5
+
+[node name="Minimize Button" type="TextureButton" parent="Frame Buttons Container"]
+layout_mode = 2
+texture_normal = ExtResource("3_sgt5v")
+texture_pressed = ExtResource("4_gukyn")
+texture_hover = ExtResource("5_6tqi4")
+
+[node name="Exit Button" type="TextureButton" parent="Frame Buttons Container"]
+layout_mode = 2
+texture_normal = ExtResource("6_587fe")
+texture_pressed = ExtResource("7_6rt5r")
+texture_hover = ExtResource("8_e2qep")
+
+[node name="Action Buttons Container" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 342.0
+offset_right = 1152.0
+offset_bottom = 758.0
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Restart Button" type="Button" parent="Action Buttons Container"]
+custom_minimum_size = Vector2(0, 66)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxTexture_fyltt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cg7sb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vnngu")
+text = "RESTART"
+
+[node name="Main Menu Button" type="Button" parent="Action Buttons Container"]
+custom_minimum_size = Vector2(0, 66)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxTexture_fyltt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cg7sb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vnngu")
+text = "WYJDŹ DO MENU"
+
+[node name="Spacer" type="Control" parent="Action Buttons Container"]
+custom_minimum_size = Vector2(0, 174)
+layout_mode = 2
+
+[node name="Quit Button" type="Button" parent="Action Buttons Container"]
+custom_minimum_size = Vector2(0, 66)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxTexture_fyltt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_cg7sb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vnngu")
+text = "WYJDŹ Z GRY"
+
+[connection signal="pressed" from="Action Buttons Container/Restart Button" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Action Buttons Container/Main Menu Button" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="Action Buttons Container/Quit Button" to="." method="_on_quit_button_pressed"]

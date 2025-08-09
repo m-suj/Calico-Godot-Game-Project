@@ -1,7 +1,7 @@
 extends Node
 
 
-var fullscreen: bool = true
+var fullscreen: bool = false
 
 
 func _process(_delta: float) -> void:
@@ -16,7 +16,6 @@ func _toggle_fullscreen() -> void:
 		var window_size: Vector2i = Vector2i(1152, 648)
 		DisplayServer.window_set_size(window_size)
 		DisplayServer.window_set_position((screen_size - window_size) / 2)
-		var _x: int = 5
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	fullscreen = !fullscreen

@@ -14,8 +14,9 @@ var jump_buffer: bool = false
 signal health_changed(new_health: int)
 signal lives_changed(new_lives: int)
 @export var max_health: int = 3
-var health: int = 3
-var lives: int = 3
+@export var max_lives: int = 3
+var health: int
+var lives: int
 
 var is_alive: bool = true
 var has_iframes: bool = false
@@ -26,52 +27,54 @@ var has_iframes: bool = false
 @onready var sprite_player: AnimatedSprite2D = $AnimatedSprite2D
 
 
+func _ready() -> void:
+	health = max_health
+	lives = max_lives
+
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += GRAVITY * delta
 	
 	# Check if player is able to move (is alive)
-	if not is_alive:
-		velocity.y *= 0.99
-		move_and_slide()
-		apply_floor_snap()
-		return
+	if is_alive:
+		# Jump higher when player hold the "jump" button (only upwards, when velocity.y < 0)
+		if not is_on_floor() and not Input.is_action_pressed("jump") and velocity.y < 0:
+			velocity += GRAVITY * delta
+		
+		# Handle jump.
+		if Input.is_action_just_pressed("jump"):
+			if is_on_floor():
+				velocity.y = JUMP_VELOCITY
+			else:
+				jump_buffer = true
+		
+		# Jump buffering
+		if Input.is_action_just_released("jump"):
+			jump_buffer = false
 	
-	# Jump higher when player hold the "jump" button (only upwards, when velocity.y < 0)
-	if not is_on_floor() and not Input.is_action_pressed("jump") and velocity.y < 0:
-		velocity += GRAVITY * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("jump"):
-		if is_on_floor():
+		if is_on_floor() and jump_buffer:
 			velocity.y = JUMP_VELOCITY
+			jump_buffer = false
+			
+		# Get the input direction and handle the movement/deceleration.
+		var direction := Input.get_axis("move_left", "move_right")
+		if direction == 0:
+			sprite_player.play("idle")
 		else:
-			jump_buffer = true
-
-	if Input.is_action_just_released("jump"):
-		jump_buffer = false
-
-	if is_on_floor() and jump_buffer:
-		velocity.y = JUMP_VELOCITY
-		jump_buffer = false
-
-
-	# Get the input direction and handle the movement/deceleration.
-	var direction := Input.get_axis("move_left", "move_right")
-	if direction == 0:
-		sprite_player.play("idle")
-	else:
-		sprite_player.play("running")
-		sprite_player.flip_h = direction < 0
-		# Apply acceleration
-		velocity.x += direction * SPEED
+			sprite_player.play("running")
+			sprite_player.flip_h = direction < 0
+			# Apply acceleration
+			velocity.x += direction * SPEED
+		
+		# Bounce only when player is alive
+		_check_bounce(delta)
 
 	# Apply friction/resistance/whatever
 	velocity.x *= 0.75
 	velocity.y *= 0.99
 
-	_check_bounce(delta)
 	move_and_slide()
 	apply_floor_snap()
 	
@@ -95,7 +98,6 @@ func bounce(bounce_velocity = BOUNCE_VELOCITY):
 # and triggers invicibility frames
 func take_damage(damage: int):
 	health -= damage
-	print("I took damage, I have now {} health and {} lives".format([health, lives], "{}"))
 	health_changed.emit(health)
 	if health <= 0:
 		_lose_life()
@@ -118,9 +120,8 @@ func _lose_life():
 	lives -= 1
 	lives_changed.emit(lives)
 	if lives <= 0:
-		print("I died")
+		pass
 	is_alive = false
-	print('I lost 1 life')
 	
 	# Sprite setup
 	sprite_player.play("idle")  # TODO: or "death" anim
@@ -139,7 +140,6 @@ func on_fell():
 func on_respawn():
 	health = max_health
 	health_changed.emit(health)
-	print('I respawned')
 	sprite_player.rotate(deg_to_rad(90))
 
 

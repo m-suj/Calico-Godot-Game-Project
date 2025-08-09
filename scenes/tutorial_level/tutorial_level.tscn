@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://ctj6787jiv8ni"]
+[gd_scene load_steps=30 format=4 uid="uid://ctj6787jiv8ni"]
 
 [ext_resource type="PackedScene" uid="uid://dmr3hc0alhoj" path="res://scenes/tutorial_level/basic_enemy.tscn" id="1_62s16"]
 [ext_resource type="PackedScene" uid="uid://bfu3mdjmvwu1m" path="res://scenes/tutorial_level/parallax_background.tscn" id="2_x2f4n"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://boonyp0f2b7qx" path="res://scenes/tutorial_level/transition_screen.tscn" id="13_mdotw"]
 [ext_resource type="PackedScene" uid="uid://bywua7dsgix1" path="res://scenes/tutorial_level/pause_menu.tscn" id="14_c7u81"]
 [ext_resource type="PackedScene" uid="uid://bg1lfqlu3xi5x" path="res://scenes/tutorial_level/hud.tscn" id="15_6y6vl"]
+[ext_resource type="PackedScene" uid="uid://do60jsds61i3v" path="res://scenes/tutorial_level/game_over_screen.tscn" id="16_qpcuc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tk3ur"]
 texture = ExtResource("3_47qeo")
@@ -918,6 +919,8 @@ position = Vector2(1208, 472)
 z_index = 2
 position = Vector2(120, 536)
 enemies = NodePath("../Environment/Enemies")
+max_health = 2
+max_lives = 2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(4.5, 4.5)
@@ -926,7 +929,9 @@ limit_left = 96
 limit_bottom = 576
 position_smoothing_enabled = true
 
-[node name="LevelManager" parent="." node_paths=PackedStringArray("hud") instance=ExtResource("12_whagd")]
+[node name="LevelManager" parent="." node_paths=PackedStringArray("transition_screen", "player", "hud") instance=ExtResource("12_whagd")]
+transition_screen = NodePath("TransitionScreen")
+player = NodePath("../Player")
 hud = NodePath("GUI Camera Overlays/HUD")
 
 [node name="TransitionScreen" parent="LevelManager" instance=ExtResource("13_mdotw")]
@@ -937,9 +942,13 @@ layer = 2
 [node name="HUD" parent="LevelManager/GUI Camera Overlays" node_paths=PackedStringArray("player") instance=ExtResource("15_6y6vl")]
 player = NodePath("../../../Player")
 
-[node name="PauseMenu" parent="LevelManager/GUI Camera Overlays" instance=ExtResource("14_c7u81")]
+[node name="PauseMenu" parent="LevelManager/GUI Camera Overlays" node_paths=PackedStringArray("level_manager") instance=ExtResource("14_c7u81")]
 visible = false
 visibility_layer = 2
+level_manager = NodePath("../..")
+
+[node name="Game Over Screen" parent="LevelManager/GUI Camera Overlays" node_paths=PackedStringArray("level_manager") instance=ExtResource("16_qpcuc")]
+level_manager = NodePath("../..")
 
 [connection signal="body_entered" from="Environment/Platforms/MovingPlatforms/MPVertical/Area2D" to="Environment/Platforms/MovingPlatforms/MPVertical" method="_on_body_entered"]
 [connection signal="fade_in_finished" from="LevelManager/TransitionScreen" to="LevelManager" method="_on_transition_in_finished"]
