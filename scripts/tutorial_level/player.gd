@@ -20,27 +20,27 @@ var lives: int = 3
 var is_alive: bool = true
 var has_iframes: bool = false
 @onready var hitbox: CollisionShape2D = $"CollisionShape2D"
-@onready var iframe_timer: Timer = $"Iframe Timer"
+@export var iframes_time: float = 2.0
 
 @onready var bounce_raycasts: Node2D = $BounceRaycasts
 @onready var sprite_player: AnimatedSprite2D = $AnimatedSprite2D
 
 
-func take_damage(damage: int):
-	health -= damage
-	print("I took damage, I have now {} health and {} lives".format([health, lives], "{}"))
-	health_changed.emit(health)
-	hitbox.disabled = true
-	iframe_timer.start()
-	if health <= 0:
-		lose_life()
-
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += GRAVITY * delta
-		if not Input.is_action_pressed("jump") and velocity.y < 0:
-			velocity += GRAVITY * delta
+	
+	# Check if player is able to move (is alive)
+	if not is_alive:
+		velocity.y *= 0.99
+		move_and_slide()
+		apply_floor_snap()
+		return
+	
+	# Jump higher when player hold the "jump" button (only upwards, when velocity.y < 0)
+	if not is_on_floor() and not Input.is_action_pressed("jump") and velocity.y < 0:
+		velocity += GRAVITY * delta
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump"):
@@ -89,28 +89,60 @@ func _check_bounce(delta):
 
 func bounce(bounce_velocity = BOUNCE_VELOCITY):
 	velocity.y = bounce_velocity
+	
+
+# Called when the player gets hit. Deals some amount of damage to health, checks if a life should be lost 
+# and triggers invicibility frames
+func take_damage(damage: int):
+	health -= damage
+	print("I took damage, I have now {} health and {} lives".format([health, lives], "{}"))
+	health_changed.emit(health)
+	if health <= 0:
+		_lose_life()
+	else:
+		_start_iframes()
 
 
-func lose_life():
+# Triggers simplified iframe state, then exits the state again 
+func _start_iframes():
+	has_iframes = true
+	sprite_player.modulate = Color(1, 1, 1, 0.5)
+	await get_tree().create_timer(iframes_time).timeout
+	sprite_player.modulate = Color(1, 1, 1, 1)
+	has_iframes = false
+
+
+# Called when player's health drops to or below 0, or when player has been killed by other means. Triggers death screen.
+func _lose_life():
+	# Lives setup
 	lives -= 1
 	lives_changed.emit(lives)
 	if lives <= 0:
 		print("I died")
 	is_alive = false
 	print('I lost 1 life')
-	$AnimatedSprite2D.rotate(deg_to_rad(-90))
+	
+	# Sprite setup
+	sprite_player.play("idle")  # TODO: or "death" anim
+	sprite_player.flip_h = false
+	sprite_player.rotate(deg_to_rad(-90))
 	
 
+# Called when the player falls into the pit — special case of injury from killzones.
+# For now, it only causes 1 life lost, might also cause unique death screen / animation / sounds.
 func on_fell():
-	lose_life()
+	_lose_life()
 
+
+# Called from Level Manager to respawn the player. Changes player's state to Respawned, when it still waits for the 
+# transition screen to finish, but moves him to the last visited checkpoint and restores his stats.
 func on_respawn():
-	is_alive = true
 	health = max_health
 	health_changed.emit(health)
 	print('I respawned')
-	$AnimatedSprite2D.rotate(deg_to_rad(90))
+	sprite_player.rotate(deg_to_rad(90))
 
 
-func _on_iframe_end() -> void:
-	hitbox.disabled = false
+# Called from Level Manager to enable player's movement. Changes their state to Alive, when they can freely move again.
+func on_revive():
+	is_alive = true

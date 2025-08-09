@@ -11,10 +11,9 @@ func _input(event: InputEvent) -> void:
 
 
 func _toggle_pause():
-	var tree = get_tree()
+	var tree: SceneTree = get_tree()
 	tree.paused = not tree.paused
 	visible = tree.paused
-
 
 
 func _on_resume_button_pressed() -> void:

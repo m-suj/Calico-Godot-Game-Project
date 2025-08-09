@@ -1,6 +1,7 @@
 extends Node
 
-@onready var level_restart: Timer = $"LevelRestartTimer"
+
+@onready var checkpoint_restart: Timer = $"CheckpointRestartTimer"
 @onready var transition_screen: TransitionScreen = $"TransitionScreen"
 @onready var player: Player2D = $"../Player"
 @export var hud: HudManager
@@ -15,42 +16,45 @@ func _ready() -> void:
 	for checkpoint in checkpoints:
 		checkpoint.checkpoint_updated.connect(_on_checkpoint_updated)
 
-#	# Connecting to killzones
-#	var killzones = $"../Environment/Killzones".get_children()
-#	for killzone in killzones:
-#		killzone.player_fell.connect(_on_player_fell)
 	player.lives_changed.connect(_on_player_lives_changed)
 	player.health_changed.connect(_on_player_took_damage)
 	hud.update()
-	# Connecting to enemies
-#	var enemies = $"../Environment/Enemies".get_children()
-#	for enemy in enemies:
-#		enemy.get_node("Damage Area").player_entered.connect(_on_player_fell)
 
 
 func _on_checkpoint_updated(checkpoint) -> void:
 	print("Checkpoint updated to position", checkpoint.position, "!")
 	current_checkpoint = checkpoint
-
-
-func _on_player_lives_changed(_new_lives: int) -> void:
-	transition_screen.fade_out()
 	
 	
 func _on_player_took_damage(_new_health: int) -> void:
 	hud.update()
 
 
-func _on_transition_finished() -> void:
+# Signal — called when the player's lives changes. Triggers transition screen and respawns the player
+func _on_player_lives_changed(_new_lives: int) -> void:
+	# TODO: You died — restart confirmation when the player loses all lives
+	transition_screen.fade_out()
+
+	
+# Signal — called after the 1st part of the transition screen
+# Time for Level Manager to respawn the player etc.
+func _on_transition_out_finished() -> void:
+	print("transition finished")
 	if current_checkpoint == null:
 		player.position = level_start_point
 	else:
 		player.position = current_checkpoint.global_position
 	player.on_respawn()
 	hud.update()
-	level_restart.start()
-	# TODO: You died - restart confirmation
+	checkpoint_restart.start()
 
 
-func _on_level_restart() -> void:
+func _on_checkpoint_restart() -> void:
 	transition_screen.fade_in()
+
+
+# Signal — called after the 2nd part of the transition screen
+# Gives the player the ability to move again after the restart sequence is finished
+func _on_transition_in_finished() -> void:
+	player.on_revive()
+

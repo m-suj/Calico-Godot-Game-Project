@@ -110,9 +110,3 @@ texture_filter = 1
 position = Vector2(0, -18)
 sprite_frames = SubResource("SpriteFrames_6qt8s")
 animation = &"running"
-
-[node name="Iframe Timer" type="Timer" parent="."]
-wait_time = 2.0
-one_shot = true
-
-[connection signal="timeout" from="Iframe Timer" to="." method="_on_iframe_end"]
