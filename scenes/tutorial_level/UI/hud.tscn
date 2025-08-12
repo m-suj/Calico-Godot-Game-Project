@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bg1lfqlu3xi5x"]
 
-[ext_resource type="Script" path="res://scripts/tutorial_level/hud_manager.gd" id="1_3u2oh"]
+[ext_resource type="Script" path="res://scripts/tutorial_level/UI/hud_manager.gd" id="1_3u2oh"]
 [ext_resource type="Texture2D" uid="uid://dmt8ieqgwkfua" path="res://assets/tutorial_level/GUI/player_head.png" id="1_r1d42"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pd7om"]

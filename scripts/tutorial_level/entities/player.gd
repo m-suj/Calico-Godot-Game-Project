@@ -109,7 +109,7 @@ func take_damage(damage: int):
 func _start_iframes():
 	has_iframes = true
 	sprite_player.modulate = Color(1, 1, 1, 0.5)
-	await get_tree().create_timer(iframes_time).timeout
+	await get_tree().create_timer(iframes_time, false, true, false).timeout
 	sprite_player.modulate = Color(1, 1, 1, 1)
 	has_iframes = false
 
@@ -122,6 +122,7 @@ func _lose_life():
 	if lives <= 0:
 		pass
 	is_alive = false
+	jump_buffer = false
 	
 	# Sprite setup
 	sprite_player.play("idle")  # TODO: or "death" anim

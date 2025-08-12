@@ -1,15 +1,15 @@
 [gd_scene load_steps=7 format=3 uid="uid://dmr3hc0alhoj"]
 
-[ext_resource type="PackedScene" uid="uid://c14d8lpyaalap" path="res://scenes/tutorial_level/bounce_area.tscn" id="1_lsafq"]
-[ext_resource type="Script" path="res://scripts/tutorial_level/basic_enemy.gd" id="1_upaob"]
-[ext_resource type="Script" path="res://scripts/tutorial_level/bounce_area.gd" id="3_f4wjf"]
-[ext_resource type="PackedScene" uid="uid://la68t0w6rog7" path="res://scenes/tutorial_level/damage_area.tscn" id="4_n3icp"]
+[ext_resource type="PackedScene" uid="uid://c14d8lpyaalap" path="res://scenes/tutorial_level/entities/bounce_area.tscn" id="1_lsafq"]
+[ext_resource type="Script" path="res://scripts/tutorial_level/entities/basic_enemy.gd" id="1_upaob"]
+[ext_resource type="Script" path="res://scripts/tutorial_level/entities/bounce_area.gd" id="3_f4wjf"]
+[ext_resource type="PackedScene" uid="uid://la68t0w6rog7" path="res://scenes/tutorial_level/entities/damage_area.tscn" id="4_n3icp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ftucs"]
-size = Vector2(40, 40)
+size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sb1w8"]
-size = Vector2(40, 34)
+size = Vector2(24, 24)
 
 [node name="BasicEnemy" type="Node2D"]
 script = ExtResource("1_upaob")
@@ -18,17 +18,18 @@ script = ExtResource("1_upaob")
 script = ExtResource("3_f4wjf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BounceArea"]
-position = Vector2(0, -20)
+position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_ftucs")
 
 [node name="ColorRect" type="ColorRect" parent="BounceArea"]
-offset_left = -20.0
-offset_top = -40.0
-offset_right = 20.0
+offset_left = -16.0
+offset_top = -32.0
+offset_right = 16.0
 color = Color(0.376471, 0.517647, 1, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Damage Area" parent="." instance=ExtResource("4_n3icp")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Damage Area"]
-position = Vector2(0, -17)
+position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_sb1w8")

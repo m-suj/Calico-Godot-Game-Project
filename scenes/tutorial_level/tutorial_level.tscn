@@ -1,21 +1,21 @@
 [gd_scene load_steps=30 format=4 uid="uid://ctj6787jiv8ni"]
 
-[ext_resource type="PackedScene" uid="uid://dmr3hc0alhoj" path="res://scenes/tutorial_level/basic_enemy.tscn" id="1_62s16"]
-[ext_resource type="PackedScene" uid="uid://bfu3mdjmvwu1m" path="res://scenes/tutorial_level/parallax_background.tscn" id="2_x2f4n"]
+[ext_resource type="PackedScene" uid="uid://dmr3hc0alhoj" path="res://scenes/tutorial_level/entities/basic_enemy.tscn" id="1_62s16"]
+[ext_resource type="PackedScene" uid="uid://bfu3mdjmvwu1m" path="res://scenes/tutorial_level/structures/parallax_background.tscn" id="2_x2f4n"]
 [ext_resource type="Texture2D" uid="uid://bcfi0x5hi5ba5" path="res://assets/tutorial_level/env/ground_tilesheet.png" id="3_47qeo"]
-[ext_resource type="TileSet" uid="uid://nxieecx43ydu" path="res://scenes/tutorial_level/platform_tileset.tres" id="4_nr6uk"]
-[ext_resource type="PackedScene" uid="uid://dlq2ps52i5nl6" path="res://scenes/tutorial_level/moving_platform.tscn" id="5_vqy6n"]
-[ext_resource type="Script" path="res://scripts/tutorial_level/moving_platform.gd" id="6_8vuxq"]
-[ext_resource type="PackedScene" uid="uid://dlyygo4x2tvr3" path="res://scenes/tutorial_level/killzone.tscn" id="7_cwj04"]
+[ext_resource type="TileSet" uid="uid://nxieecx43ydu" path="res://scenes/tutorial_level/structures/platform_tileset.tres" id="4_nr6uk"]
+[ext_resource type="PackedScene" uid="uid://dlq2ps52i5nl6" path="res://scenes/tutorial_level/structures/moving_platform.tscn" id="5_vqy6n"]
+[ext_resource type="Script" path="res://scripts/tutorial_level/structures/moving_platform.gd" id="6_8vuxq"]
+[ext_resource type="PackedScene" uid="uid://dlyygo4x2tvr3" path="res://scenes/tutorial_level/structures/killzone.tscn" id="7_cwj04"]
 [ext_resource type="Texture2D" uid="uid://r631m0va27gs" path="res://assets/tutorial_level/env/flames_test.png" id="8_82b7p"]
 [ext_resource type="Texture2D" uid="uid://ct75murruff1" path="res://assets/tutorial_level/killzone_debug.png" id="9_atkvy"]
-[ext_resource type="PackedScene" uid="uid://di3xy0ormero1" path="res://scenes/tutorial_level/checkpoint.tscn" id="10_31nrx"]
-[ext_resource type="PackedScene" uid="uid://dgpba0c0ris03" path="res://scenes/tutorial_level/player.tscn" id="11_28rl2"]
+[ext_resource type="PackedScene" uid="uid://di3xy0ormero1" path="res://scenes/tutorial_level/structures/checkpoint.tscn" id="10_31nrx"]
+[ext_resource type="PackedScene" uid="uid://dgpba0c0ris03" path="res://scenes/tutorial_level/entities/player.tscn" id="11_28rl2"]
 [ext_resource type="PackedScene" uid="uid://c81gt1v08lrq6" path="res://scenes/tutorial_level/level_manager.tscn" id="12_whagd"]
-[ext_resource type="PackedScene" uid="uid://boonyp0f2b7qx" path="res://scenes/tutorial_level/transition_screen.tscn" id="13_mdotw"]
-[ext_resource type="PackedScene" uid="uid://bywua7dsgix1" path="res://scenes/tutorial_level/pause_menu.tscn" id="14_c7u81"]
-[ext_resource type="PackedScene" uid="uid://bg1lfqlu3xi5x" path="res://scenes/tutorial_level/hud.tscn" id="15_6y6vl"]
-[ext_resource type="PackedScene" uid="uid://do60jsds61i3v" path="res://scenes/tutorial_level/game_over_screen.tscn" id="16_qpcuc"]
+[ext_resource type="PackedScene" uid="uid://boonyp0f2b7qx" path="res://scenes/tutorial_level/UI/transition_screen.tscn" id="13_mdotw"]
+[ext_resource type="PackedScene" uid="uid://bywua7dsgix1" path="res://scenes/tutorial_level/UI/pause_menu.tscn" id="14_c7u81"]
+[ext_resource type="PackedScene" uid="uid://bg1lfqlu3xi5x" path="res://scenes/tutorial_level/UI/hud.tscn" id="15_6y6vl"]
+[ext_resource type="PackedScene" uid="uid://do60jsds61i3v" path="res://scenes/tutorial_level/UI/game_over_screen.tscn" id="16_qpcuc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tk3ur"]
 texture = ExtResource("3_47qeo")
@@ -917,7 +917,7 @@ position = Vector2(1208, 472)
 
 [node name="Player" parent="." node_paths=PackedStringArray("enemies") instance=ExtResource("11_28rl2")]
 z_index = 2
-position = Vector2(120, 536)
+position = Vector2(126, 544)
 enemies = NodePath("../Environment/Enemies")
 max_health = 2
 max_lives = 2

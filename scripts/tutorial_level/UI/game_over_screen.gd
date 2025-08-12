@@ -1,5 +1,4 @@
-extends Control
-class_name GameOverScreen
+class_name GameOverScreen extends Control
 
 
 @export var level_manager: LevelManager
@@ -10,9 +9,12 @@ func _ready() -> void:
 	level_manager.game_over.connect(_on_game_over)
 	
 	
+# Signal from
 func _on_game_over() -> void:
-	print("game over! From: Game Over Screen")
 	visible = true
+
+	
+### Self explanatory signals below
 
 func _on_restart_button_pressed() -> void:
 	get_tree().reload_current_scene()

@@ -6,18 +6,22 @@ var is_pausable: bool = true
 
 
 func _ready() -> void:
-	level_manager.game_over.connect(_on_game_over)
+	level_manager.game_over.connect(_disable_pausing)
+	level_manager.player_respawn_start.connect(_disable_pausing)
+	level_manager.player_respawn_finish.connect(_enable_pausing)
 	visible = false
 	
 
 # Handle game pause
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("menu") and is_pausable:
+	if event.is_action_pressed("menu"):
 		_toggle_pause()
 
 
 # Pause/unpause the game
 func _toggle_pause() -> void:
+	if not is_pausable: 
+		return
 	var tree: SceneTree = get_tree()
 	tree.paused = not tree.paused
 	visible = tree.paused
@@ -25,8 +29,7 @@ func _toggle_pause() -> void:
 
 # Signal button — Resume
 func _on_resume_button_pressed() -> void:
-	get_tree().paused = false
-	visible = false
+	_toggle_pause()
 
 
 # Signal button — Go to main menu
@@ -44,5 +47,9 @@ func _on_quit_button_pressed() -> void:
 
 	
 # Signal Level Manager — Disable pause
-func _on_game_over() -> void:
+func _disable_pausing() -> void:
 	is_pausable = false
+	
+	
+func _enable_pausing() -> void:
+	is_pausable = true
